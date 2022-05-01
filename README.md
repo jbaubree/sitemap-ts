@@ -6,6 +6,11 @@
 [![Licence](https://badgen.net/npm/license/sitemap-ts)](https://github.com/jbaubree/sitemap-ts/blob/main/LICENSE)
 [![CI](https://github.com/jbaubree/sitemap-ts/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jbaubree/sitemap-ts/actions/workflows/ci.yml)
 
+
+> Sitemap generator.
+
+> This plugin scans your dist folder to generate sitemap.xml and robots.txt files.
+
 ## Configuration options
 
 ### hostname
@@ -20,7 +25,7 @@ Base URI.
 - **Type:** `string[]`
 - **Default:** `[]`
 
-Array of strings with manual dynamic routes.
+Array of strings with manual routes.
 ```js
 const names = [
   'John',
@@ -29,16 +34,8 @@ const names = [
   'Dana',
 ]
 const dynamicRoutes = names.map(name => `/names/${name}`)
-
-export default {
-  plugins: [
-    Vue(),
-    Sitemap({ dynamicRoutes }),
-  ],
-}
+Sitemap({ dynamicRoutes })
 ```
-
-You can find a working example in example folder.
 
 ### outDir
 
