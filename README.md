@@ -37,6 +37,18 @@ const dynamicRoutes = names.map(name => `/names/${name}`)
 Sitemap({ dynamicRoutes })
 ```
 
+### exclude
+
+- **Type:** `string[]`
+- **Default:** `[]`
+
+Array of strings with excluded routes.
+```js
+generateSitemap({
+  exclude: ['/admin', '/private']
+})
+```
+
 ### outDir
 
 - **Type:** `string`
