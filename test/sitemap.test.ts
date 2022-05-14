@@ -18,7 +18,7 @@ describe('Sitemap', () => {
       exclude: ['/route'],
     }))).toEqual([
       '/',
-      '/route/sub-route'
+      '/route/sub-route',
     ])
 
     generateTestFiles()

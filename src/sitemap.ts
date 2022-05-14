@@ -11,7 +11,7 @@ export function getRoutes(options: ResolvedOptions) {
       return slash(join('/', parsedRoute.dir, parsedRoute.name))
     }),
     ...options.dynamicRoutes.map(route => slash(join('/', join(parse(route).dir, parse(route).name)))),
-  ].filter((route) => !options.exclude.includes(route))
+  ].filter(route => !options.exclude.includes(route))
 }
 
 export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) {
