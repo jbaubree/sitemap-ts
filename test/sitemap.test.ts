@@ -13,6 +13,14 @@ describe('Sitemap', () => {
       '/route/sub-route',
     ])
 
+    expect(getRoutes(resolveOptions({
+      dynamicRoutes: ['/', 'route', '/route/sub-route'],
+      exclude: ['/route'],
+    }))).toEqual([
+      '/',
+      '/route/sub-route'
+    ])
+
     generateTestFiles()
 
     expect(getRoutes(resolveOptions({}))).toEqual([

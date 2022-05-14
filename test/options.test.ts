@@ -9,6 +9,35 @@ describe('Options', () => {
       {
         "changefreq": "daily",
         "dynamicRoutes": [],
+        "exclude": [],
+        "hostname": "http://localhost/",
+        "lastmod": Any<Date>,
+        "outDir": "dist",
+        "priority": 1,
+        "readable": false,
+        "robots": [
+          {
+            "allow": "/",
+            "userAgent": "*",
+          },
+        ],
+      }
+    `)
+  })
+
+  test('resolve options with excluded routes', () => {
+    expect(resolveOptions({
+      exclude: ['/routes1', '/route2/sub-route'],
+    })).toMatchInlineSnapshot({
+      lastmod: expect.any(Date),
+    }, `
+      {
+        "changefreq": "daily",
+        "dynamicRoutes": [],
+        "exclude": [
+          "/routes1",
+          "/route2/sub-route",
+        ],
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
@@ -44,6 +73,7 @@ describe('Options', () => {
       {
         "changefreq": "daily",
         "dynamicRoutes": [],
+        "exclude": [],
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",

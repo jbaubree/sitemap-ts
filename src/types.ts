@@ -42,6 +42,12 @@ interface Options {
    */
   dynamicRoutes: string[]
   /**
+   * Array of strings with excluded routes.
+   * Example: ['/routes1', '/route2/sub-route']
+   * @default []
+   */
+  exclude: string[]
+  /**
    * Output directory
    * @default 'dist'
    */

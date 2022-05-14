@@ -5,6 +5,7 @@ export function resolveOptions(userOptions: UserOptions): ResolvedOptions {
     {
       hostname: 'http://localhost/',
       dynamicRoutes: [],
+      exclude: [],
       outDir: 'dist',
       changefreq: 'daily',
       priority: 1,
