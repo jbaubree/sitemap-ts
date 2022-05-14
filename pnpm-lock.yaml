@@ -11,7 +11,7 @@ specifiers:
   eslint: 8.15.0
   esno: 0.15.0
   fast-glob: 3.2.11
-  pnpm: 7.0.1
+  pnpm: 7.1.0
   rimraf: 3.0.2
   sitemap: 7.1.1
   typescript: 4.6.4
@@ -31,7 +31,7 @@ devDependencies:
   eslint: 8.15.0
   esno: 0.15.0
   fast-glob: 3.2.11
-  pnpm: 7.0.1
+  pnpm: 7.1.0
   rimraf: 3.0.2
   sitemap: 7.1.1
   typescript: 4.6.4
@@ -3000,8 +3000,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/7.0.1:
-    resolution: {integrity: sha512-jDXatNQpx+KYoCg0sSEBj4ryS8dIfo05TkhH5GOyi0ClhmkdmdHr2PgbReQyzZzuQpKWefCAvwOB8PxE1tgQNg==}
+  /pnpm/7.1.0:
+    resolution: {integrity: sha512-iT2Hk2jycfh8NXoEnwpg7oCNMwsMlheSR9QAgkhWtRHvjfAAtp0HsKEOA62ILoAwbvv/ea8Ph5lTQLsGQJRq+w==}
     engines: {node: '>=14.19'}
     hasBin: true
     dev: true
