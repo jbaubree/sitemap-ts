@@ -3,6 +3,16 @@
   "version": "0.2.1",
   "packageManager": "pnpm@7.5.0",
   "description": "Sitemap generator for TypeScript projects",
+  "author": "JB Aubrée <jb.aubree@protonmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/jbaubree/sitemap-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbaubree/sitemap-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antfu/sitemap-ts/issues"
+  },
   "keywords": [
     "Sitemap",
     "Typescript",
@@ -11,26 +21,17 @@
     "Sitemap.xml",
     "Robots.txt"
   ],
-  "homepage": "https://github.com/jbaubree/sitemap-ts#readme",
-  "bugs": {
-    "url": "https://github.com/antfu/sitemap-ts/issues"
-  },
-  "license": "MIT",
-  "author": "JB Aubrée <jb.aubree@protonmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jbaubree/sitemap-ts.git"
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "typesVersions": {
     "*": {
       "*": [
@@ -42,7 +43,6 @@
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
@@ -78,6 +78,9 @@
     "vite": "2.9.14",
     "vitest": "0.18.0"
   },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
   "lint-staged": {
     "*.{js,ts,tsx,vue,md}": [
       "eslint --fix"
@@ -85,8 +88,5 @@
     "./src/*.ts": [
       "tsc --skipLibCheck --noEmit"
     ]
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
   }
 }
