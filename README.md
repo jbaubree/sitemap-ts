@@ -56,6 +56,14 @@ generateSitemap({
 
 Output directory.
 
+### extentions
+
+- **Type:** `string | string[]`
+- **Default:** `'html'`
+
+File extentions that need to be generated.
+Example: ['html', 'md']
+
 ### changefreq
 
 - **Type:** `string`

@@ -7,6 +7,7 @@ export function resolveOptions(userOptions: UserOptions): ResolvedOptions {
       dynamicRoutes: [],
       exclude: [],
       outDir: 'dist',
+      extentions: 'html',
       changefreq: 'daily',
       priority: 1,
       lastmod: new Date(),

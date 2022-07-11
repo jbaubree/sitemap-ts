@@ -13,7 +13,7 @@ const removeFiles = () => {
       rmSync(testFile)
   })
   if (existsSync(SUBPATH_FOLDER))
-    rmdirSync(SUBPATH_FOLDER)
+    rmdirSync(SUBPATH_FOLDER, { recursive: true })
 }
 
 beforeEach(() => {

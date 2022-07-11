@@ -53,6 +53,12 @@ interface Options {
    */
   outDir: string
   /**
+   * File extentions that need to be generated.
+   * Example: ['html', 'md']
+   * @default 'html'
+   */
+  extentions: string | string[]
+  /**
    * Change frequency option for sitemap
    * @default 'daily'
    */
