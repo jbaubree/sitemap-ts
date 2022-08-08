@@ -25,12 +25,14 @@ describe('Sitemap', () => {
     generateTestFiles()
 
     expect(getRoutes(resolveOptions({}))).toEqual([
+      '/',
       '/test',
       '/sub-path/deeper-path',
       '/sub-path',
     ])
 
     expect(getRoutes(resolveOptions({ extentions: ['html', 'md'] }))).toEqual([
+      '/',
       '/md',
       '/test',
       '/sub-path/deeper-path',
@@ -40,6 +42,7 @@ describe('Sitemap', () => {
     ])
 
     expect(getRoutes(resolveOptions({ dynamicRoutes: ['/', 'route', '/route/sub-route'] }))).toEqual([
+      '/',
       '/test',
       '/sub-path/deeper-path',
       '/sub-path',

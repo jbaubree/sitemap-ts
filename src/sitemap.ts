@@ -12,7 +12,7 @@ export function getRoutes(options: ResolvedOptions) {
     ...sync(strExt, { cwd: options.outDir }).map((route) => {
       let r = route
       ext.forEach((e) => {
-        const regex = new RegExp(`/index\.${e}`, 'g')
+        const regex = new RegExp(`index\.${e}`, 'g')
         r = r.replace(regex, '')
       })
       const parsedRoute = parse(r)
