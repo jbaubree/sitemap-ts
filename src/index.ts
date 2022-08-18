@@ -31,5 +31,6 @@ export function generateSitemap(options: UserOptions = {}) {
   stream.end()
 }
 
+export * from './sitemap'
 export * from './types'
 export default generateSitemap
