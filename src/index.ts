@@ -31,6 +31,6 @@ export function generateSitemap(options: UserOptions = {}) {
   stream.end()
 }
 
-export * from './sitemap'
+export { getRoutes, getFormattedSitemap } from './sitemap'
 export * from './types'
 export default generateSitemap
