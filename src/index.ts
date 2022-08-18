@@ -32,5 +32,6 @@ export function generateSitemap(options: UserOptions = {}) {
 }
 
 export { getRoutes, getFormattedSitemap } from './sitemap'
+export { resolveOptions } from './options'
 export * from './types'
 export default generateSitemap
