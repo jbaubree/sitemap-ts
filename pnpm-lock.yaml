@@ -7,7 +7,7 @@ specifiers:
   '@babel/types': 7.18.13
   '@types/node': 18.0.3
   bumpp: 8.2.1
-  c8: 7.11.3
+  c8: 7.12.0
   eslint: 8.23.0
   esno: 0.16.3
   fast-glob: 3.2.11
@@ -34,7 +34,7 @@ devDependencies:
   '@babel/types': 7.18.13
   '@types/node': 18.0.3
   bumpp: 8.2.1
-  c8: 7.11.3
+  c8: 7.12.0
   eslint: 8.23.0
   esno: 0.16.3
   lint-staged: 13.0.3
@@ -943,8 +943,8 @@ packages:
       semver: 7.3.5
     dev: true
 
-  /c8/7.11.3:
-    resolution: {integrity: sha512-6YBmsaNmqRm9OS3ZbIiL2EZgi1+Xc4O24jL3vMYGE6idixYuGdy76rIfIdltSKDj9DpLNrcXSonUTR1miBD0wA==}
+  /c8/7.12.0:
+    resolution: {integrity: sha512-CtgQrHOkyxr5koX1wEUmN/5cfDa2ckbHRA4Gy5LAL0zaCFtVWJS5++n+w4/sr2GWGerBxgTjpKeDclk/Qk6W/A==}
     engines: {node: '>=10.12.0'}
     hasBin: true
     dependencies:
