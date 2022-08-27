@@ -18,7 +18,7 @@ specifiers:
   sitemap: 7.1.1
   typescript: 4.7.4
   unbuild: 0.7.4
-  vite: 2.9.14
+  vite: 2.9.15
   vitest: 0.22.1
   xml-formatter: 2.6.1
 
@@ -43,7 +43,7 @@ devDependencies:
   simple-git-hooks: 2.8.0
   typescript: 4.7.4
   unbuild: 0.7.4
-  vite: 2.9.14
+  vite: 2.9.15
   vitest: 0.22.1
 
 packages:
@@ -4245,8 +4245,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite/2.9.14:
-    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
+  /vite/2.9.15:
+    resolution: {integrity: sha512-fzMt2jK4vQ3yK56te3Kqpkaeq9DkcZfBbzHwYpobasvgYmP2SoAr6Aic05CsB4CzCZbsDv4sujX3pkEGhLabVQ==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -4261,7 +4261,7 @@ packages:
       stylus:
         optional: true
     dependencies:
-      esbuild: 0.14.38
+      esbuild: 0.14.49
       postcss: 8.4.13
       resolve: 1.22.0
       rollup: 2.70.2
@@ -4299,7 +4299,7 @@ packages:
       local-pkg: 0.4.2
       tinypool: 0.2.4
       tinyspy: 1.0.2
-      vite: 2.9.14
+      vite: 2.9.15
     transitivePeerDependencies:
       - less
       - sass
