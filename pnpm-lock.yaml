@@ -12,7 +12,7 @@ specifiers:
   esno: 0.16.3
   fast-glob: 3.2.11
   lint-staged: ^13.0.3
-  pnpm: 7.5.0
+  pnpm: 7.9.5
   rimraf: 3.0.2
   simple-git-hooks: ^2.8.0
   sitemap: 7.1.1
@@ -38,7 +38,7 @@ devDependencies:
   eslint: 8.19.0
   esno: 0.16.3
   lint-staged: 13.0.3
-  pnpm: 7.5.0
+  pnpm: 7.9.5
   rimraf: 3.0.2
   simple-git-hooks: 2.8.0
   typescript: 4.7.4
@@ -3549,8 +3549,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/7.5.0:
-    resolution: {integrity: sha512-sb9wJNyx/d8l3Gze2jI1y8BGNbb/ga+JT3SrGNiH+C5KbtZ4wmgePBWGjaiGugcpT9+vQ5MO//+QlVWhMCpedQ==}
+  /pnpm/7.9.5:
+    resolution: {integrity: sha512-+r7+PlBIsblqia8eUOUsBp/R+lHmGAm55jyQRt3DWMUI0srVR1aNJhQECfx24L53Ckz9g48mVxQXEniQMWQPmw==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: true
