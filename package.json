@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.26.1",
-    "@antfu/ni": "0.16.3",
+    "@antfu/ni": "0.17.2",
     "@antfu/utils": "0.5.2",
     "@babel/types": "7.18.13",
     "@types/node": "18.0.3",
