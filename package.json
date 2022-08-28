@@ -64,7 +64,7 @@
     "@antfu/ni": "0.17.2",
     "@antfu/utils": "0.5.2",
     "@babel/types": "7.18.13",
-    "@types/node": "18.0.3",
+    "@types/node": "18.7.13",
     "bumpp": "8.2.1",
     "c8": "7.12.0",
     "eslint": "8.23.0",
