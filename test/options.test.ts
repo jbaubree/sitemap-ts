@@ -10,7 +10,7 @@ describe('Options', () => {
         "changefreq": "daily",
         "dynamicRoutes": [],
         "exclude": [],
-        "extentions": "html",
+        "extensions": "html",
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
@@ -39,7 +39,7 @@ describe('Options', () => {
           "/routes1",
           "/route2/sub-route",
         ],
-        "extentions": "html",
+        "extensions": "html",
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
@@ -55,9 +55,9 @@ describe('Options', () => {
     `)
   })
 
-  test('resolve options with specific extentions', () => {
+  test('resolve options with specific extensions', () => {
     expect(resolveOptions({
-      extentions: ['html', 'md'],
+      extensions: ['html', 'md'],
     })).toMatchInlineSnapshot({
       lastmod: expect.any(Date),
     }, `
@@ -65,7 +65,7 @@ describe('Options', () => {
         "changefreq": "daily",
         "dynamicRoutes": [],
         "exclude": [],
-        "extentions": [
+        "extensions": [
           "html",
           "md",
         ],
@@ -105,7 +105,7 @@ describe('Options', () => {
         "changefreq": "daily",
         "dynamicRoutes": [],
         "exclude": [],
-        "extentions": "html",
+        "extensions": "html",
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",

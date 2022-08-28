@@ -5,7 +5,7 @@ import { sync } from 'fast-glob'
 import type { ResolvedOptions } from './types'
 
 export function getRoutes(options: ResolvedOptions) {
-  const ext = typeof options.extentions === 'string' ? [options.extentions] : options.extentions
+  const ext = typeof options.extensions === 'string' ? [options.extensions] : options.extensions
   const strExt = ext.map(e => `**/*.${e}`)
 
   return [

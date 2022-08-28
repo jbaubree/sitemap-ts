@@ -7,7 +7,7 @@ import { generateTestFiles } from './utils'
 describe('Sitemap', () => {
   test('Get routes', async () => {
     expect(getRoutes(resolveOptions({}))).toEqual([])
-    expect(getRoutes(resolveOptions({ extentions: ['html', 'md'] }))).toEqual([])
+    expect(getRoutes(resolveOptions({ extensions: ['html', 'md'] }))).toEqual([])
     expect(getRoutes(resolveOptions({ dynamicRoutes: ['/', 'route', '/route/sub-route'] }))).toEqual([
       '/',
       '/route',
@@ -31,7 +31,7 @@ describe('Sitemap', () => {
       '/sub-path',
     ])
 
-    expect(getRoutes(resolveOptions({ extentions: ['html', 'md'] }))).toEqual([
+    expect(getRoutes(resolveOptions({ extensions: ['html', 'md'] }))).toEqual([
       '/',
       '/md',
       '/test',
