@@ -55,7 +55,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "fast-glob": "3.2.11",
+    "fast-glob": "3.2.12",
     "sitemap": "7.1.1",
     "xml-formatter": "2.6.1"
   },
