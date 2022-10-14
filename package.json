@@ -65,7 +65,7 @@
     "@antfu/utils": "0.5.2",
     "@babel/types": "7.19.0",
     "@types/node": "18.7.18",
-    "@vitest/coverage-c8": "0.23.4",
+    "@vitest/coverage-c8": "0.24.3",
     "bumpp": "8.2.1",
     "eslint": "8.23.1",
     "esno": "0.16.3",

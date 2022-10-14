@@ -6,7 +6,7 @@ specifiers:
   '@antfu/utils': 0.5.2
   '@babel/types': 7.19.0
   '@types/node': 18.7.18
-  '@vitest/coverage-c8': 0.23.4
+  '@vitest/coverage-c8': 0.24.3
   bumpp: 8.2.1
   eslint: 8.23.1
   esno: 0.16.3
@@ -33,7 +33,7 @@ devDependencies:
   '@antfu/utils': 0.5.2
   '@babel/types': 7.19.0
   '@types/node': 18.7.18
-  '@vitest/coverage-c8': 0.23.4
+  '@vitest/coverage-c8': 0.24.3
   bumpp: 8.2.1
   eslint: 8.23.1
   esno: 0.16.3
@@ -775,11 +775,11 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitest/coverage-c8/0.23.4:
-    resolution: {integrity: sha512-jmD00a5DQH9gu9K+YdvVhcMuv2CzHvU4gCnySS40Ec5hKlXtlCzRfNHl00VnhfuBeaQUmaQYe60BLT413HyDdg==}
+  /@vitest/coverage-c8/0.24.3:
+    resolution: {integrity: sha512-tAmMyHxWYnAwGeJb7QgTuEX8aLasTg4X1/6INobXa/7wYGEJ28CACFO5iLn1HzFVPoLvhsS3luQjiflGjjSMRQ==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.23.4
+      vitest: 0.24.3
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -3740,6 +3740,10 @@ packages:
     resolution: {integrity: sha512-ak+PZZEuH3mw6CCFOgf5S90YH0MARnZNhxjhjguAmoJimEMAJuNip/rJRd6/wyylHItomVpKTzZk9zrhTrQCoQ==}
     dev: true
 
+  /tinybench/2.3.0:
+    resolution: {integrity: sha512-zs1gMVBwyyG2QbVchYIbnabRhMOCGvrwZz/q+SV+LIMa9q5YDQZi2kkI6ZRqV2Bz7ba1uvrc7ieUoE4KWnGeKg==}
+    dev: true
+
   /tinypool/0.3.0:
     resolution: {integrity: sha512-NX5KeqHOBZU6Bc0xj9Vr5Szbb1j8tUHIeD18s41aDJaPeC5QTdEhK0SpdpUrZlj2nv5cctNcSjaKNanXlfcVEQ==}
     engines: {node: '>=14.0.0'}
@@ -4002,6 +4006,47 @@ packages:
       local-pkg: 0.4.2
       strip-literal: 0.4.2
       tinybench: 2.1.5
+      tinypool: 0.3.0
+      tinyspy: 1.0.2
+      vite: 3.1.3
+    transitivePeerDependencies:
+      - less
+      - sass
+      - stylus
+      - supports-color
+      - terser
+    dev: true
+
+  /vitest/0.24.3:
+    resolution: {integrity: sha512-aM0auuPPgMSstWvr851hB74g/LKaKBzSxcG3da7ejfZbx08Y21JpZmbmDYrMTCGhVZKqTGwzcnLMwyfz2WzkhQ==}
+    engines: {node: '>=v14.16.0'}
+    hasBin: true
+    peerDependencies:
+      '@edge-runtime/vm': '*'
+      '@vitest/browser': '*'
+      '@vitest/ui': '*'
+      happy-dom: '*'
+      jsdom: '*'
+    peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
+      '@vitest/browser':
+        optional: true
+      '@vitest/ui':
+        optional: true
+      happy-dom:
+        optional: true
+      jsdom:
+        optional: true
+    dependencies:
+      '@types/chai': 4.3.3
+      '@types/chai-subset': 1.3.3
+      '@types/node': 18.7.18
+      chai: 4.3.6
+      debug: 4.3.4
+      local-pkg: 0.4.2
+      strip-literal: 0.4.2
+      tinybench: 2.3.0
       tinypool: 0.3.0
       tinyspy: 1.0.2
       vite: 3.1.3
