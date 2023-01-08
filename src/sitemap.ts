@@ -1,6 +1,6 @@
 import { join, parse } from 'path'
 import { ensurePrefix, slash } from '@antfu/utils'
-import { sync } from 'fast-glob'
+import fg from 'fast-glob'
 
 import type { ResolvedOptions } from './types'
 import { removeMaybeSuffix } from './utils'
@@ -10,7 +10,7 @@ export function getRoutes(options: ResolvedOptions) {
   const strExt = ext.map(e => `**/*.${e}`)
 
   return [
-    ...sync(strExt, { cwd: options.outDir }).map((route) => {
+    ...fg.sync(strExt, { cwd: options.outDir }).map((route) => {
       let r = route
       ext.forEach((e) => {
         const regex = new RegExp(`index\.${e}`, 'g')
