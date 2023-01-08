@@ -66,5 +66,17 @@ describe('Sitemap', () => {
         },
       ]
     `)
+    expect(getFormattedSitemap(resolveOptions({ basePath: '/base' }), ['/route'])).toMatchInlineSnapshot([{
+      lastmod: expect.any(Date),
+    }], `
+      [
+        {
+          "changefreq": "daily",
+          "lastmod": Any<Date>,
+          "priority": 1,
+          "url": "http://localhost/base/route",
+        },
+      ]
+    `)
   })
 })

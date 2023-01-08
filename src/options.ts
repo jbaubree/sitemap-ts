@@ -6,6 +6,7 @@ export function resolveOptions(userOptions: UserOptions): ResolvedOptions {
       hostname: 'http://localhost/',
       dynamicRoutes: [],
       exclude: [],
+      basePath: '',
       outDir: 'dist',
       extensions: 'html',
       changefreq: 'daily',

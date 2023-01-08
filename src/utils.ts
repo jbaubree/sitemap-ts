@@ -8,3 +8,9 @@ export function getResolvedPath(file: string, resolvedOptions: ResolvedOptions) 
     return resolve(`${resolvedOptions.outDir}/${file}`)
   return resolve(`${ensurePrefix('./', resolvedOptions.outDir)}/${file}`)
 }
+
+export function removeMaybeSuffix(suffix: string, str: string) {
+  if (!str.endsWith(suffix))
+    return str
+  return str.slice(0, -suffix.length)
+}

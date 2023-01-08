@@ -1,8 +1,9 @@
 import { join, parse } from 'path'
-import { slash } from '@antfu/utils'
+import { ensurePrefix, slash } from '@antfu/utils'
 import { sync } from 'fast-glob'
 
 import type { ResolvedOptions } from './types'
+import { removeMaybeSuffix } from './utils'
 
 export function getRoutes(options: ResolvedOptions) {
   const ext = typeof options.extensions === 'string' ? [options.extensions] : options.extensions
@@ -24,7 +25,7 @@ export function getRoutes(options: ResolvedOptions) {
 
 export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) {
   return routes.map(route => ({
-    url: new URL(route, options.hostname).href,
+    url: new URL(options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', '/route'), removeMaybeSuffix('/', options.hostname)).href,
     changefreq: options.changefreq,
     priority: options.priority,
     lastmod: options.lastmod,

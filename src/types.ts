@@ -48,6 +48,12 @@ interface Options {
    */
   exclude: string[]
   /**
+   * String with base path.
+   * Example: '/mysubpath'
+   * @default ''
+   */
+  basePath: string
+  /**
    * Output directory
    * @default 'dist'
    */

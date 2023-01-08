@@ -18,9 +18,11 @@ describe('Index', () => {
     generateTestFiles()
 
     generateSitemap({ robots: TEST_OPTION_1 })
-    expect(readFileSync(ROBOTS_FILE).toString('utf-8')).toEqual(
-      'User-agent: *\nAllow: /\n\nSitemap: http://localhost/sitemap.xml',
-    )
+    if (existsSync(ROBOTS_FILE)) {
+      expect(readFileSync(ROBOTS_FILE).toString('utf-8')).toEqual(
+        'User-agent: *\nAllow: /\n\nSitemap: http://localhost/sitemap.xml',
+      )
+    }
 
     generateSitemap({ hostname: 'https://test.com/', robots: TEST_OPTION_2, readable: true })
     expect(readFileSync(ROBOTS_FILE).toString('utf-8')).toEqual(

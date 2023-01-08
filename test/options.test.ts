@@ -7,6 +7,7 @@ describe('Options', () => {
       lastmod: expect.any(Date),
     }, `
       {
+        "basePath": "",
         "changefreq": "daily",
         "dynamicRoutes": [],
         "exclude": [],
@@ -33,6 +34,7 @@ describe('Options', () => {
       lastmod: expect.any(Date),
     }, `
       {
+        "basePath": "",
         "changefreq": "daily",
         "dynamicRoutes": [],
         "exclude": [
@@ -62,6 +64,7 @@ describe('Options', () => {
       lastmod: expect.any(Date),
     }, `
       {
+        "basePath": "",
         "changefreq": "daily",
         "dynamicRoutes": [],
         "exclude": [],
@@ -102,6 +105,7 @@ describe('Options', () => {
       lastmod: expect.any(Date),
     }, `
       {
+        "basePath": "",
         "changefreq": "daily",
         "dynamicRoutes": [],
         "exclude": [],
