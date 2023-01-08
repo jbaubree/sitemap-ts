@@ -1,6 +1,6 @@
 {
   "name": "sitemap-ts",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "packageManager": "pnpm@7.22.0",
   "description": "Sitemap generator for TypeScript projects",
   "author": "JB Aubrée <jb.aubree@protonmail.com>",
@@ -54,8 +54,7 @@
     "test": "vitest --coverage",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@antfu/eslint-config": "0.34.0",
     "@antfu/ni": "0.18.8",
