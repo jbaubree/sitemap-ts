@@ -1,6 +1,6 @@
 {
   "name": "sitemap-ts",
-  "version": "1.2.1",
+  "version": "1.2.0",
   "packageManager": "pnpm@7.22.0",
   "description": "Sitemap generator for TypeScript projects",
   "author": "JB Aubrée <jb.aubree@protonmail.com>",
@@ -54,28 +54,29 @@
     "test": "vitest --coverage",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@antfu/utils": "0.7.2",
+    "fast-glob": "3.2.12",
+    "sitemap": "7.1.1",
+    "xml-formatter": "3.2.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "0.34.0",
     "@antfu/ni": "0.18.8",
-    "@antfu/utils": "0.7.2",
     "@babel/types": "7.20.7",
     "@types/node": "18.11.18",
     "@vitest/coverage-c8": "0.26.3",
     "bumpp": "8.2.1",
     "eslint": "8.31.0",
     "esno": "0.16.3",
-    "fast-glob": "3.2.12",
     "lint-staged": "13.1.0",
     "pnpm": "7.22.0",
     "rimraf": "3.0.2",
     "simple-git-hooks": "2.8.1",
-    "sitemap": "7.1.1",
     "typescript": "4.9.4",
     "unbuild": "1.0.2",
     "vite": "4.0.4",
-    "vitest": "0.26.3",
-    "xml-formatter": "3.2.0"
+    "vitest": "0.26.3"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
