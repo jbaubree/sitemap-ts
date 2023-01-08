@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@antfu/eslint-config': 0.27.0
   '@antfu/ni': 0.18.0
-  '@antfu/utils': 0.5.2
+  '@antfu/utils': 0.7.2
   '@babel/types': 7.19.0
   '@types/node': 18.7.18
   '@vitest/coverage-c8': 0.23.4
@@ -30,7 +30,7 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config': 0.27.0_irgkl5vooow2ydyo6aokmferha
   '@antfu/ni': 0.18.0
-  '@antfu/utils': 0.5.2
+  '@antfu/utils': 0.7.2
   '@babel/types': 7.19.0
   '@types/node': 18.7.18
   '@vitest/coverage-c8': 0.23.4
@@ -146,8 +146,8 @@ packages:
     hasBin: true
     dev: true
 
-  /@antfu/utils/0.5.2:
-    resolution: {integrity: sha512-CQkeV+oJxUazwjlHD0/3ZD08QWKuGQkhnrKo3e6ly5pd48VUpXbb77q0xMU4+vc2CkJnDS02Eq/M9ugyX20XZA==}
+  /@antfu/utils/0.7.2:
+    resolution: {integrity: sha512-vy9fM3pIxZmX07dL+VX1aZe7ynZ+YyB0jY+jE6r3hOK6GNY2t6W8rzpFC4tgpbXUYABkFQwgJq2XYXlxbXAI0g==}
     dev: true
 
   /@babel/code-frame/7.18.6:
