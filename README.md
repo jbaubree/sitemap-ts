@@ -49,6 +49,18 @@ generateSitemap({
 })
 ```
 
+### base path
+
+- **Type:** `string`
+- **Default:** ``
+
+String with base path.
+```js
+generateSitemap({
+  basePath: '/path'
+})
+```
+
 ### outDir
 
 - **Type:** `string`
