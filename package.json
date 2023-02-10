@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.34.0",
-    "@antfu/ni": "0.18.8",
+    "@antfu/ni": "0.20.0",
     "@babel/types": "7.20.7",
     "@types/node": "18.11.18",
     "@vitest/coverage-c8": "0.26.3",

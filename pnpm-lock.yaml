@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': 0.34.0
-  '@antfu/ni': 0.18.8
+  '@antfu/ni': 0.20.0
   '@antfu/utils': 0.7.2
   '@babel/types': 7.20.7
   '@types/node': 18.11.18
@@ -30,7 +30,7 @@ dependencies:
 
 devDependencies:
   '@antfu/eslint-config': 0.34.0_iukboom6ndih5an6iafl45j2fe
-  '@antfu/ni': 0.18.8
+  '@antfu/ni': 0.20.0
   '@babel/types': 7.20.7
   '@types/node': 18.11.18
   '@vitest/coverage-c8': 0.26.3
@@ -145,8 +145,8 @@ packages:
       - typescript
     dev: true
 
-  /@antfu/ni/0.18.8:
-    resolution: {integrity: sha512-0m++AudwQq+wWAz/Ax7g+sh/wFW51HHQ6BtPLsuTAsFIzWB/bv/0COwZE7BRS+u0nqMb6Ks6nlk6cY1TpPDwHg==}
+  /@antfu/ni/0.20.0:
+    resolution: {integrity: sha512-mBgAuq2b0daSA/14LMyjEjaInD7/Zd7KVXZge7bQPKmtQJFqy9/pWBml6DMkMreeHQEomMtIbbeqReNJ/74kjA==}
     hasBin: true
     dev: true
 
