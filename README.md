@@ -34,7 +34,7 @@ const names = [
   'Dana',
 ]
 const dynamicRoutes = names.map(name => `/names/${name}`)
-Sitemap({ dynamicRoutes })
+generateSitemap({ dynamicRoutes })
 ```
 
 ### exclude
