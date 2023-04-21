@@ -13,6 +13,7 @@ export function resolveOptions(userOptions: UserOptions): ResolvedOptions {
       priority: 1,
       lastmod: new Date(),
       readable: false,
+      generateRobotsTxt: true,
       robots: [{
         userAgent: '*',
         allow: '/',

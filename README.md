@@ -102,7 +102,14 @@ Last modification option for sitemap.
 - **Type:** `boolean`
 - **Default:** `false`
 
-Converts XML into a human readable format
+Converts XML into a human-readable format
+
+### generateRobotsTxt
+
+- **Type:** `boolean`
+- **Default:** `true`
+
+Enables robots.txt file generation
 
 ### robots
 

@@ -80,10 +80,15 @@ interface Options {
    */
   lastmod: Date
   /**
-   * Converts XML into a human readable format
+   * Converts XML into a human-readable format
    * @default false
    */
   readable: boolean
+  /**
+   * Enables robots.txt file generation
+   * @default true
+   */
+  generateRobotsTxt: boolean
   /**
    * Robots policy
    * @default [{ userAgent: '*', allow: '/' }]

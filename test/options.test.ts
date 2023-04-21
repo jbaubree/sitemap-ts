@@ -12,6 +12,7 @@ describe('Options', () => {
         "dynamicRoutes": [],
         "exclude": [],
         "extensions": "html",
+        "generateRobotsTxt": true,
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
@@ -42,6 +43,7 @@ describe('Options', () => {
           "/route2/sub-route",
         ],
         "extensions": "html",
+        "generateRobotsTxt": true,
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
@@ -72,6 +74,7 @@ describe('Options', () => {
           "html",
           "md",
         ],
+        "generateRobotsTxt": true,
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
@@ -110,6 +113,7 @@ describe('Options', () => {
         "dynamicRoutes": [],
         "exclude": [],
         "extensions": "html",
+        "generateRobotsTxt": true,
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
@@ -133,6 +137,34 @@ describe('Options', () => {
               "/another-disabled-path",
             ],
             "userAgent": "GoogleBot",
+          },
+        ],
+      }
+    `)
+  })
+
+  test('resolve options with disabled robots.txt file', () => {
+    expect(resolveOptions({
+      generateRobotsTxt: false,
+    })).toMatchInlineSnapshot({
+      lastmod: expect.any(Date),
+    }, `
+      {
+        "basePath": "",
+        "changefreq": "daily",
+        "dynamicRoutes": [],
+        "exclude": [],
+        "extensions": "html",
+        "generateRobotsTxt": false,
+        "hostname": "http://localhost/",
+        "lastmod": Any<Date>,
+        "outDir": "dist",
+        "priority": 1,
+        "readable": false,
+        "robots": [
+          {
+            "allow": "/",
+            "userAgent": "*",
           },
         ],
       }
