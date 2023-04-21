@@ -1,12 +1,9 @@
 /// <reference types="vitest" />
 
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
-  plugins: [{
-    name: 'config',
-    config: () => ({
-      test: { setupFiles: ['test/setup.ts'] },
-    }),
-  }],
+  test: {
+    setupFiles: ['test/setup.ts'],
+  },
 })
