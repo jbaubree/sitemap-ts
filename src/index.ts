@@ -10,10 +10,13 @@ import type { ResolvedOptions, UserOptions } from './types'
 
 export function generateSitemap(options: UserOptions = {}) {
   const resolvedOptions: ResolvedOptions = resolveOptions(options)
+
   // robots.txt
-  const robotRules = getRules(resolvedOptions.robots)
-  const robotContent = getContent(robotRules, resolvedOptions.hostname)
-  writeFileSync(getResolvedPath('robots.txt', resolvedOptions), robotContent)
+  if (resolvedOptions.generateRobotsTxt) {
+    const robotRules = getRules(resolvedOptions.robots)
+    const robotContent = getContent(robotRules, resolvedOptions.hostname)
+    writeFileSync(getResolvedPath('robots.txt', resolvedOptions), robotContent)
+  }
 
   // sitemap.xml
   const routes = getRoutes(resolvedOptions)
