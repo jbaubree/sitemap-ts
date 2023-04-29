@@ -1,4 +1,4 @@
-import { isAbsolute, resolve } from 'path'
+import { isAbsolute, resolve } from 'node:path'
 import { ensurePrefix } from '@antfu/utils'
 
 import type { ResolvedOptions } from './types'

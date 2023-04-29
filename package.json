@@ -1,7 +1,7 @@
 {
   "name": "sitemap-ts",
   "version": "1.2.2",
-  "packageManager": "pnpm@7.22.0",
+  "packageManager": "pnpm@8.3.1",
   "description": "Sitemap generator for TypeScript projects",
   "author": "JB Aubrée <jb.aubree@protonmail.com>",
   "license": "MIT",
@@ -58,25 +58,25 @@
     "@antfu/utils": "0.7.2",
     "fast-glob": "3.2.12",
     "sitemap": "7.1.1",
-    "xml-formatter": "3.2.0"
+    "xml-formatter": "3.3.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.34.0",
-    "@antfu/ni": "0.18.8",
-    "@babel/types": "7.20.7",
-    "@types/node": "18.11.18",
-    "@vitest/coverage-c8": "0.26.3",
-    "bumpp": "8.2.1",
-    "eslint": "8.31.0",
+    "@antfu/eslint-config": "0.38.5",
+    "@antfu/ni": "0.21.3",
+    "@babel/types": "7.21.5",
+    "@types/node": "18.16.3",
+    "@vitest/coverage-c8": "0.30.1",
+    "bumpp": "9.1.0",
+    "eslint": "8.39.0",
     "esno": "0.16.3",
-    "lint-staged": "13.1.0",
-    "pnpm": "7.22.0",
-    "rimraf": "3.0.2",
+    "lint-staged": "13.2.2",
+    "pnpm": "8.3.1",
+    "rimraf": "5.0.0",
     "simple-git-hooks": "2.8.1",
-    "typescript": "4.9.4",
-    "unbuild": "1.0.2",
-    "vite": "4.0.4",
-    "vitest": "0.26.3"
+    "typescript": "5.0.4",
+    "unbuild": "1.2.1",
+    "vite": "4.3.3",
+    "vitest": "0.30.1"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

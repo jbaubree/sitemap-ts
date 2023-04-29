@@ -1,4 +1,4 @@
-import { join, parse } from 'path'
+import { join, parse } from 'node:path'
 import { ensurePrefix, slash } from '@antfu/utils'
 import fg from 'fast-glob'
 

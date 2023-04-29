@@ -1,5 +1,5 @@
-import { existsSync, mkdirSync, writeFileSync } from 'fs'
-import { dirname } from 'path'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { dirname } from 'node:path'
 
 import { TEST_FILES } from './variables'
 

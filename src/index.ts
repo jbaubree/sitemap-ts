@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs'
+import { writeFileSync } from 'node:fs'
 import { SitemapStream, streamToPromise } from 'sitemap'
 import format from 'xml-formatter'
 
