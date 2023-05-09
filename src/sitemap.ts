@@ -25,7 +25,7 @@ export function getRoutes(options: ResolvedOptions) {
 
 export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) {
   return routes.map(route => ({
-    url: new URL(options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', '/route'), removeMaybeSuffix('/', options.hostname)).href,
+    url: new URL(options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', route), removeMaybeSuffix('/', options.hostname)).href,
     changefreq: options.changefreq,
     priority: options.priority,
     lastmod: options.lastmod,
