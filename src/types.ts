@@ -26,6 +26,8 @@ export interface RobotOption {
   cleanParam?: string
 }
 
+export type RoutesOptionMap<T> = T | { [key: string]: T }
+
 /**
  * Plugin options.
  */
@@ -68,17 +70,17 @@ interface Options {
    * Change frequency option for sitemap
    * @default 'daily'
    */
-  changefreq: string
+  changefreq: string | RoutesOptionMap<string>
   /**
    * Priority option for sitemap
    * @default 1
    */
-  priority: number
+  priority: number | RoutesOptionMap<number>
   /**
    * Last modification option for sitemap
    * @default new Date()
    */
-  lastmod: Date
+  lastmod: Date | RoutesOptionMap<Date>
   /**
    * Converts XML into a human-readable format
    * @default false

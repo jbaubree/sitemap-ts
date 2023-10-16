@@ -2,8 +2,9 @@ import { join, parse } from 'node:path'
 import { ensurePrefix, slash } from '@antfu/utils'
 import fg from 'fast-glob'
 
-import type { ResolvedOptions } from './types'
+import type { ResolvedOptions, RoutesOptionMap } from './types'
 import { removeMaybeSuffix } from './utils'
+import { defaultOptions } from './options'
 
 export function getRoutes(options: ResolvedOptions) {
   const ext = typeof options.extensions === 'string' ? [options.extensions] : options.extensions
@@ -23,11 +24,22 @@ export function getRoutes(options: ResolvedOptions) {
   ].filter(route => !options.exclude.includes(route))
 }
 
+function getOptionByRoute<T extends Date | string | number>(options: T | RoutesOptionMap<T>, route: string): T | undefined {
+  if (options instanceof Date || typeof options === 'string' || typeof options === 'number')
+    return options
+  const givenRoutes = Object.keys(options)
+  if (givenRoutes.includes(route))
+    return options[route]
+  if (givenRoutes.includes('*'))
+    return options['*']
+  return undefined
+}
+
 export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) {
   return routes.map(route => ({
     url: new URL(options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', route), removeMaybeSuffix('/', options.hostname)).href,
-    changefreq: options.changefreq,
-    priority: options.priority,
-    lastmod: options.lastmod,
+    changefreq: getOptionByRoute(options.changefreq, route) ?? defaultOptions.changefreq,
+    priority: getOptionByRoute(options.priority, route) ?? defaultOptions.priority,
+    lastmod: getOptionByRoute(options.lastmod, route) ?? defaultOptions.lastmod,
   }))
 }
