@@ -78,5 +78,41 @@ describe('Sitemap', () => {
         },
       ]
     `)
+    expect(getFormattedSitemap(resolveOptions({ changefreq: 'monthly', priority: 0.7 }), ['/route'])).toMatchInlineSnapshot([{
+      lastmod: expect.any(Date),
+    }], `
+      [
+        {
+          "changefreq": "monthly",
+          "lastmod": Any<Date>,
+          "priority": 0.7,
+          "url": "http://localhost/route",
+        },
+      ]
+    `)
+    expect(getFormattedSitemap(resolveOptions({ changefreq: { '*': 'weekly', '/otherRoute': 'monthly' }, priority: { '*': 0.8, '/otherRoute': 0.4 } }), ['/route'])).toMatchInlineSnapshot([{
+      lastmod: expect.any(Date),
+    }], `
+      [
+        {
+          "changefreq": "weekly",
+          "lastmod": Any<Date>,
+          "priority": 0.8,
+          "url": "http://localhost/route",
+        },
+      ]
+    `)
+    expect(getFormattedSitemap(resolveOptions({ changefreq: { '*': 'weekly', '/route': 'monthly', '/otherRoute': 'never' }, priority: { '*': 0.8, '/route': 0.6, '/otherRoute': 0.5 } }), ['/route'])).toMatchInlineSnapshot([{
+      lastmod: expect.any(Date),
+    }], `
+      [
+        {
+          "changefreq": "monthly",
+          "lastmod": Any<Date>,
+          "priority": 0.6,
+          "url": "http://localhost/route",
+        },
+      ]
+    `)
   })
 })
