@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@antfu/utils':
-    specifier: 0.7.2
-    version: 0.7.2
+    specifier: 0.7.6
+    version: 0.7.6
   fast-glob:
     specifier: 3.2.12
     version: 3.2.12
@@ -175,8 +175,8 @@ packages:
     hasBin: true
     dev: true
 
-  /@antfu/utils@0.7.2:
-    resolution: {integrity: sha512-vy9fM3pIxZmX07dL+VX1aZe7ynZ+YyB0jY+jE6r3hOK6GNY2t6W8rzpFC4tgpbXUYABkFQwgJq2XYXlxbXAI0g==}
+  /@antfu/utils@0.7.6:
+    resolution: {integrity: sha512-pvFiLP2BeOKA/ZOS6jxx4XhKzdVLHDhGlFEaZ2flWWYf2xOqVniqpk38I04DFRyz+L0ASggl7SkItTc+ZLju4w==}
     dev: false
 
   /@babel/code-frame@7.21.4:
