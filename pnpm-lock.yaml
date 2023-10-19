@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@antfu/utils':
     specifier: 0.7.2
@@ -43,8 +47,8 @@ devDependencies:
     specifier: 13.2.2
     version: 13.2.2
   pnpm:
-    specifier: 8.3.1
-    version: 8.3.1
+    specifier: 8.9.2
+    version: 8.9.2
   rimraf:
     specifier: 5.0.0
     version: 5.0.0
@@ -3789,8 +3793,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.3.1:
-    resolution: {integrity: sha512-0mT2ZAv08J3nz8xUdWhRW88GE89IWgPo/xZhb6acQXK2+aCikl7kT7Bg31ZcnJqOrwYXSed68xjLd/ZoSnBR8w==}
+  /pnpm@8.9.2:
+    resolution: {integrity: sha512-udNf6RsqWFTa3EMDSj57LmdfpLVuIOjgnvB4+lU8GPiu1EBR57Nui43UNfl+sMRMT/O0T8fG+n0h4frBe75mHg==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
