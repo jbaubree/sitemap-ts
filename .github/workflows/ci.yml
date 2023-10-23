@@ -23,7 +23,7 @@ jobs:
           version: 6
 
       - name: Set node version to ${{ matrix.node }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           registry-url: https://registry.npmjs.org/
@@ -53,7 +53,7 @@ jobs:
           version: 6
 
       - name: Set node version to 16
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
           cache: pnpm
