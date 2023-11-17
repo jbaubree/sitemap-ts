@@ -1,4 +1,4 @@
-import { ensurePrefix, ensureSuffix } from '@antfu/utils'
+import { ensurePrefix } from '@antfu/utils'
 
 import type { RobotOption } from './types'
 import { removeMaybeSuffix } from './utils'
