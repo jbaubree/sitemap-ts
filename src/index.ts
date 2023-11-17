@@ -14,7 +14,7 @@ export function generateSitemap(options: UserOptions = {}) {
   // robots.txt
   if (resolvedOptions.generateRobotsTxt) {
     const robotRules = getRules(resolvedOptions.robots)
-    const robotContent = getContent(robotRules, resolvedOptions.hostname)
+    const robotContent = getContent(robotRules, resolvedOptions.hostname, resolvedOptions.externalSitemaps)
     writeFileSync(getResolvedPath('robots.txt', resolvedOptions), robotContent)
   }
 

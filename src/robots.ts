@@ -1,6 +1,7 @@
-import { ensureSuffix } from '@antfu/utils'
+import { ensurePrefix, ensureSuffix } from '@antfu/utils'
 
 import type { RobotOption } from './types'
+import { removeMaybeSuffix } from './utils'
 
 enum RobotCorrespondences {
   userAgent = 'User-agent',
@@ -39,11 +40,12 @@ export function getRules(options: RobotOption[]) {
   return rules
 }
 
-export function getContent(rules: RobotRuleInterface[], hostname: string) {
+export function getContent(rules: RobotRuleInterface[], hostname: string, externalSitemaps: string[]) {
   return rules.map(rule => `${rule.key}: ${String(rule.value).trim()}`).join('\n')
     .concat(`\n\nSitemap: ${getFinalSitemapPath(hostname)}`)
+    .concat(externalSitemaps.map(s => `\nSitemap: ${getFinalSitemapPath(hostname, s)}`).join(''))
 }
 
-export function getFinalSitemapPath(hostname: string) {
-  return `${ensureSuffix('/', hostname)}sitemap.xml`
+export function getFinalSitemapPath(hostname: string, file = '/sitemap.xml') {
+  return `${removeMaybeSuffix('/', hostname)}${ensurePrefix('/', file)}`
 }

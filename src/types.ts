@@ -50,6 +50,11 @@ interface Options {
    */
   exclude: string[]
   /**
+   * Other sitemaps paths
+   * @default []
+   */
+  externalSitemaps: string[]
+  /**
    * String with base path.
    * Example: '/mysubpath'
    * @default ''
