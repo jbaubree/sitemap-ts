@@ -43,7 +43,9 @@ export function getRules(options: RobotOption[]) {
 export function getContent(rules: RobotRuleInterface[], hostname: string, externalSitemaps: string[]) {
   return rules.map(rule => `${rule.key}: ${String(rule.value).trim()}`).join('\n')
     .concat(`\n\nSitemap: ${getFinalSitemapPath(hostname)}`)
-    .concat(externalSitemaps.map(s => `\nSitemap: ${getFinalSitemapPath(hostname, s)}`).join(''))
+    .concat(externalSitemaps.map(s => `\nSitemap: ${
+        s.startsWith('http') ? s : getFinalSitemapPath(hostname, s)
+      }`).join(''))
 }
 
 export function getFinalSitemapPath(hostname: string, file = '/sitemap.xml') {

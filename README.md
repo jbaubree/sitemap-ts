@@ -54,10 +54,10 @@ generateSitemap({
 - **Type:** `string[]`
 - **Default:** `[]`
 
-Array of strings with other sitemaps paths.
+Array of strings with other sitemaps paths or urls.
 ```js
 generateSitemap({
-  externalSitemaps: ['sitemap_1', 'sitemap_2', 'subpath/sitemap_3']
+  externalSitemaps: ['sitemap_1', 'sitemap_2', 'subpath/sitemap_3', 'https://site.com/sitemap.xml']
 })
 ```
 
