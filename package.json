@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@antfu/utils": "0.7.6",
-    "fast-glob": "3.3.1",
+    "fast-glob": "3.3.2",
     "sitemap": "7.1.1",
     "xml-formatter": "3.5.0"
   },
