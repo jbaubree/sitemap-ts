@@ -1,6 +1,6 @@
 {
   "name": "sitemap-ts",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "packageManager": "pnpm@8.9.2",
   "description": "Sitemap generator for TypeScript projects",
   "author": "JB Aubrée <jb.aubree@protonmail.com>",
