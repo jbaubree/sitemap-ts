@@ -4,6 +4,7 @@ export const defaultOptions = {
   hostname: 'http://localhost/',
   dynamicRoutes: [],
   exclude: [],
+  externalSitemaps: [],
   basePath: '',
   outDir: 'dist',
   extensions: 'html',

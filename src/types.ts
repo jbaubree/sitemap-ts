@@ -50,6 +50,12 @@ interface Options {
    */
   exclude: string[]
   /**
+   * Other sitemaps paths
+   * Example: ['sitemap_1.xml', 'path/sitemap_2.xml', 'https://site.com/sitemap.xml']
+   * @default []
+   */
+  externalSitemaps: string[]
+  /**
    * String with base path.
    * Example: '/mysubpath'
    * @default ''
