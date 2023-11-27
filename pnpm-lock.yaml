@@ -23,8 +23,8 @@ devDependencies:
     specifier: ^0.43.1
     version: 0.43.1(eslint@8.51.0)(typescript@5.2.2)
   '@antfu/ni':
-    specifier: 0.21.8
-    version: 0.21.8
+    specifier: 0.21.12
+    version: 0.21.12
   '@babel/types':
     specifier: 7.23.0
     version: 7.23.0
@@ -185,8 +185,8 @@ packages:
       - typescript
     dev: true
 
-  /@antfu/ni@0.21.8:
-    resolution: {integrity: sha512-90X8pU2szlvw0AJo9EZMbYc2eQKkmO7mAdC4tD4r5co2Mm56MT37MIG8EyB7p4WRheuzGxuLDxJ63mF6+Zajiw==}
+  /@antfu/ni@0.21.12:
+    resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
     hasBin: true
     dev: true
 
@@ -4678,7 +4678,7 @@ packages:
     resolution: {integrity: sha512-X7Dob7+n77GOHO7UUQ+Bn2gZXjRK1NLffb/lMGy41uyGUCh3zOZVlQ+M7IrntXmSsNy0DDKpdzSe40mQK5NTVw==}
     hasBin: true
     dependencies:
-      '@antfu/ni': 0.21.8
+      '@antfu/ni': 0.21.12
       '@npmcli/config': 8.0.1
       cli-progress: 3.12.0
       deepmerge: 4.3.1
