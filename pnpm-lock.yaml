@@ -47,8 +47,8 @@ devDependencies:
     specifier: 15.0.2
     version: 15.0.2
   pnpm:
-    specifier: 8.9.2
-    version: 8.9.2
+    specifier: 8.15.5
+    version: 8.15.5
   rimraf:
     specifier: 5.0.5
     version: 5.0.5
@@ -4129,8 +4129,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.9.2:
-    resolution: {integrity: sha512-udNf6RsqWFTa3EMDSj57LmdfpLVuIOjgnvB4+lU8GPiu1EBR57Nui43UNfl+sMRMT/O0T8fG+n0h4frBe75mHg==}
+  /pnpm@8.15.5:
+    resolution: {integrity: sha512-sFGjLH5pWDO4SSbTspuMylclS1ifBknYmcbp0O22cLkex+KkNFm65zdZu1zmGcMmbxFr+THOItHvF1mn5Fqpbw==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
