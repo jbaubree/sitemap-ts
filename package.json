@@ -1,7 +1,7 @@
 {
   "name": "sitemap-ts",
   "version": "1.6.1",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.15.8",
   "description": "Sitemap generator for TypeScript projects",
   "author": "JB Aubrée <jb.aubree@protonmail.com>",
   "license": "MIT",
@@ -71,7 +71,7 @@
     "eslint": "8.51.0",
     "esno": "0.17.0",
     "lint-staged": "15.0.2",
-    "pnpm": "8.9.2",
+    "pnpm": "8.15.8",
     "rimraf": "5.0.5",
     "simple-git-hooks": "2.9.0",
     "taze": "^0.11.4",
