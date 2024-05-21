@@ -1,12 +1,12 @@
 import { existsSync, readFileSync } from 'node:fs'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { generateSitemap } from '../src'
 import { generateTestFiles } from './utils'
 import { ROBOTS_FILE, SITEMAP_FILE, TEST_OPTION_1, TEST_OPTION_2 } from './variables'
 
-describe('Index', () => {
-  test('Generate sitemap', async () => {
+describe('index', () => {
+  it('generate sitemap', async () => {
     expect(existsSync(SITEMAP_FILE)).toBe(false)
     expect(existsSync(ROBOTS_FILE)).toBe(false)
 

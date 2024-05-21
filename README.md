@@ -6,7 +6,6 @@
 [![Licence](https://badgen.net/npm/license/sitemap-ts)](https://github.com/jbaubree/sitemap-ts/blob/main/LICENSE)
 [![CI](https://github.com/jbaubree/sitemap-ts/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jbaubree/sitemap-ts/actions/workflows/ci.yml)
 
-
 > Sitemap generator.
 
 > This plugin scans your dist folder to generate sitemap.xml and robots.txt files.
@@ -26,6 +25,7 @@ Base URI.
 - **Default:** `[]`
 
 Array of strings with manual routes.
+
 ```js
 const names = [
   'John',
@@ -43,6 +43,7 @@ generateSitemap({ dynamicRoutes })
 - **Default:** `[]`
 
 Array of strings with excluded routes.
+
 ```js
 generateSitemap({
   exclude: ['/admin', '/private']
@@ -55,6 +56,7 @@ generateSitemap({
 - **Default:** `[]`
 
 Array of strings with other sitemaps paths or urls.
+
 ```js
 generateSitemap({
   externalSitemaps: ['sitemap_1', 'sitemap_2', 'subpath/sitemap_3', 'https://site.com/sitemap.xml']
@@ -67,6 +69,7 @@ generateSitemap({
 - **Default:** ``
 
 String with base path.
+
 ```js
 generateSitemap({
   basePath: '/path'
@@ -136,6 +139,7 @@ Enables robots.txt file generation
 - **Default:** `[{ userAgent: '*', allow: '/' }]`
 
 RobotOption:
+
 - **userAgent**: `string`
 - **allow**?: `string | string[]`
 - **disallow**?: `string | string[]`

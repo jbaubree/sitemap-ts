@@ -1,12 +1,12 @@
 import { resolve } from 'node:path'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { ensurePrefix } from '@antfu/utils'
 
 import { getResolvedPath } from '../src/utils'
 import { resolveOptions } from '../src/options'
 
-describe('Utils', () => {
-  test('Get resolved path', async () => {
+describe('utils', () => {
+  it('get resolved path', async () => {
     const opt = resolveOptions({})
     const optAbsolute = resolveOptions({ outDir: resolve('.') })
     const file = 'test.txt'

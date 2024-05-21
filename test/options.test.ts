@@ -1,8 +1,8 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { resolveOptions } from '../src/options'
 
-describe('Options', () => {
-  test('resolve options', () => {
+describe('options', () => {
+  it('resolve options', () => {
     expect(resolveOptions({})).toMatchInlineSnapshot({
       lastmod: expect.any(Date),
     }, `
@@ -29,7 +29,7 @@ describe('Options', () => {
     `)
   })
 
-  test('resolve options with excluded routes', () => {
+  it('resolve options with excluded routes', () => {
     expect(resolveOptions({
       exclude: ['/routes1', '/route2/sub-route'],
     })).toMatchInlineSnapshot({
@@ -61,7 +61,7 @@ describe('Options', () => {
     `)
   })
 
-  test('resolve options with specific extensions', () => {
+  it('resolve options with specific extensions', () => {
     expect(resolveOptions({
       extensions: ['html', 'md'],
     })).toMatchInlineSnapshot({
@@ -93,15 +93,14 @@ describe('Options', () => {
     `)
   })
 
-  test('resolve options with policies', () => {
+  it('resolve options with policies', () => {
     expect(resolveOptions({
       robots: [{
         userAgent: '*',
         allow: '/',
         disallow: '/some-path',
         crawlDelay: 10,
-      },
-      {
+      }, {
         userAgent: 'GoogleBot',
         allow: ['/', '/some-path'],
         disallow: ['/disabled-path', '/another-disabled-path'],
@@ -147,7 +146,7 @@ describe('Options', () => {
     `)
   })
 
-  test('resolve options with disabled robots.txt file', () => {
+  it('resolve options with disabled robots.txt file', () => {
     expect(resolveOptions({
       generateRobotsTxt: false,
     })).toMatchInlineSnapshot({

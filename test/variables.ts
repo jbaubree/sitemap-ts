@@ -30,8 +30,7 @@ export const TEST_OPTION_2 = [
 export const TEST_RULES_1 = [{
   key: 'User-agent',
   value: '*',
-},
-{
+}, {
   key: 'Allow',
   value: '/',
 }]

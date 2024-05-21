@@ -23,8 +23,7 @@ export function getRules(options: RobotOption[]) {
   const rules: RobotRuleInterface[] = []
 
   options.forEach((rule) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
+    // @ts-expect-error keyof RobotOption are strings
     const keys: Array<keyof RobotOption> = Object.keys(RobotCorrespondences).filter((key: keyof RobotOption) => typeof (rule[key]) !== 'undefined')
     keys.forEach((key) => {
       const values = Array.isArray(rule[key]) ? rule[key] as Value[] : [rule[key]] as Value[]

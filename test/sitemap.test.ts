@@ -1,11 +1,11 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { resolveOptions } from '../src/options'
 import { getFormattedSitemap, getRoutes } from '../src/sitemap'
 import { generateTestFiles } from './utils'
 
-describe('Sitemap', () => {
-  test('Get routes', async () => {
+describe('sitemap', () => {
+  it('get routes', async () => {
     expect(getRoutes(resolveOptions({}))).toEqual([])
     expect(getRoutes(resolveOptions({ extensions: ['html', 'md'] }))).toEqual([])
     expect(getRoutes(resolveOptions({ dynamicRoutes: ['/', 'route', '/route/sub-route'] }))).toEqual([
@@ -52,7 +52,7 @@ describe('Sitemap', () => {
     ])
   })
 
-  test('Get formatted sitemap', async () => {
+  it('get formatted sitemap', async () => {
     expect(getFormattedSitemap(resolveOptions({}), [])).toEqual([])
     expect(getFormattedSitemap(resolveOptions({}), ['/route'])).toMatchInlineSnapshot([{
       lastmod: expect.any(Date),
