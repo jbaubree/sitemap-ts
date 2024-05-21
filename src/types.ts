@@ -50,6 +50,18 @@ interface Options {
    */
   exclude: string[]
   /**
+   * Array of i18n languages.
+   * Example: {
+   *  defaultLanguage: 'fr'
+   *  languages: ['fr', 'en', 'es']
+   * }
+   * @default undefined
+   */
+  i18n?: {
+    defaultLanguage?: string
+    languages: string[]
+  }
+  /**
    * Other sitemaps paths
    * Example: ['sitemap_1.xml', 'path/sitemap_2.xml', 'https://site.com/sitemap.xml']
    * @default []

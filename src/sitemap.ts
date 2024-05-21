@@ -1,6 +1,6 @@
 import { join, parse } from 'node:path'
 import { ensurePrefix, slash } from '@antfu/utils'
-import fg from 'fast-glob'
+import * as fg from 'fast-glob'
 
 import type { ResolvedOptions, RoutesOptionMap } from './types'
 import { removeMaybeSuffix } from './utils'
@@ -36,10 +36,17 @@ function getOptionByRoute<T extends Date | string | number>(options: T | RoutesO
 }
 
 export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) {
-  return routes.map(route => ({
-    url: new URL(options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', route), removeMaybeSuffix('/', options.hostname)).href,
-    changefreq: getOptionByRoute(options.changefreq, route) ?? defaultOptions.changefreq,
-    priority: getOptionByRoute(options.priority, route) ?? defaultOptions.priority,
-    lastmod: getOptionByRoute(options.lastmod, route) ?? defaultOptions.lastmod,
-  }))
+  return routes.map((route) => {
+    const url = new URL(options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', route), removeMaybeSuffix('/', options.hostname)).href
+    const formattedSitemap = {
+      url,
+      changefreq: getOptionByRoute(options.changefreq, route) ?? defaultOptions.changefreq,
+      priority: getOptionByRoute(options.priority, route) ?? defaultOptions.priority,
+      lastmod: getOptionByRoute(options.lastmod, route) ?? defaultOptions.lastmod,
+    }
+    if (options.i18n)
+      return Object.assign(formattedSitemap, { link: options.i18n.languages.map(str => ({ lang: str, url: str === options.i18n?.defaultLanguage ? url : `${url}/${str}` })) })
+
+    return formattedSitemap
+  })
 }

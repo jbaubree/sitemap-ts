@@ -114,5 +114,49 @@ describe('sitemap', () => {
         },
       ]
     `)
+    expect(getFormattedSitemap(resolveOptions({ i18n: { languages: ['fr', 'en'] } }), ['/route'])).toMatchInlineSnapshot([{
+      lastmod: expect.any(Date),
+    }], `
+      [
+        {
+          "changefreq": "daily",
+          "lastmod": Any<Date>,
+          "link": [
+            {
+              "lang": "fr",
+              "url": "http://localhost/route/fr",
+            },
+            {
+              "lang": "en",
+              "url": "http://localhost/route/en",
+            },
+          ],
+          "priority": 1,
+          "url": "http://localhost/route",
+        },
+      ]
+    `)
+    expect(getFormattedSitemap(resolveOptions({ i18n: { languages: ['fr', 'en'], defaultLanguage: 'fr' } }), ['/route'])).toMatchInlineSnapshot([{
+      lastmod: expect.any(Date),
+    }], `
+      [
+        {
+          "changefreq": "daily",
+          "lastmod": Any<Date>,
+          "link": [
+            {
+              "lang": "fr",
+              "url": "http://localhost/route",
+            },
+            {
+              "lang": "en",
+              "url": "http://localhost/route/en",
+            },
+          ],
+          "priority": 1,
+          "url": "http://localhost/route",
+        },
+      ]
+    `)
   })
 })
