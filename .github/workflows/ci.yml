@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        node: [16, 18, 20, 22]
+        node: [18, 20, 22]
 
     steps:
       - name: Checkout repo
@@ -38,7 +38,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    name: 'Lint: node-16, ubuntu-latest'
+    name: 'Lint: node-20, ubuntu-latest'
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
