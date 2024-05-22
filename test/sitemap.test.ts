@@ -121,7 +121,7 @@ describe('sitemap', () => {
         {
           "changefreq": "daily",
           "lastmod": Any<Date>,
-          "link": [
+          "links": [
             {
               "lang": "fr",
               "url": "http://localhost/route/fr",
@@ -143,7 +143,7 @@ describe('sitemap', () => {
         {
           "changefreq": "daily",
           "lastmod": Any<Date>,
-          "link": [
+          "links": [
             {
               "lang": "fr",
               "url": "http://localhost/route",
@@ -151,6 +151,10 @@ describe('sitemap', () => {
             {
               "lang": "en",
               "url": "http://localhost/route/en",
+            },
+            {
+              "lang": "x-default",
+              "url": "http://localhost/route",
             },
           ],
           "priority": 1,
