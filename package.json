@@ -90,7 +90,7 @@
       "eslint --fix"
     ],
     "./src/*.ts": [
-      "tsc --skipLibCheck --noEmit"
+      "tsc --skipLibCheck --esModuleInterop --noEmit"
     ]
   }
 }
