@@ -1,6 +1,6 @@
 import { join, parse } from 'node:path'
 import { ensurePrefix, slash } from '@antfu/utils'
-import * as fg from 'fast-glob'
+import fg from 'fast-glob'
 
 import type { ResolvedOptions, RoutesOptionMap } from './types'
 import { removeMaybeSuffix } from './utils'
