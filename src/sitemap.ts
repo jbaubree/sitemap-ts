@@ -47,9 +47,10 @@ export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) 
       lastmod: getOptionByRoute(options.lastmod, route) ?? defaultOptions.lastmod,
     }
     if (options.i18n) {
+      const strategy = options.i18n.strategy ?? 'suffix'
       const languages = options.i18n.languages.map(str => ({
         lang: str,
-        url: str === options.i18n?.defaultLanguage ? url : new URL(options.i18n?.pathPrefix ? ensurePrefix('/', str) + routePath : removeMaybeSuffix('/', routePath) + ensurePrefix('/', str), hostNamePath).href,
+        url: str === options.i18n?.defaultLanguage ? url : new URL(strategy === 'prefix' ? ensurePrefix('/', str) + routePath : removeMaybeSuffix('/', routePath) + ensurePrefix('/', str), hostNamePath).href,
       }))
       return Object.assign(formattedSitemap, { links: options.i18n.defaultLanguage ? [...languages, { lang: 'x-default', url }] : languages })
     }

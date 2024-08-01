@@ -54,14 +54,14 @@ interface Options {
    * Example: {
    *  defaultLanguage: 'fr'
    *  languages: ['fr', 'en', 'es']
-   *  pathPrefix: true
+   *  strategy: 'suffix' | 'prefix'
    * }
-   * @default undefined, prefix: false
+   * @default undefined, strategy: 'suffix'
    */
   i18n?: {
     defaultLanguage?: string
     languages: string[]
-    pathPrefix?: boolean
+    strategy?: 'suffix' | 'prefix'
   }
   /**
    * Other sitemaps paths
@@ -120,4 +120,4 @@ interface Options {
 
 export type UserOptions = Partial<Options>
 
-export interface ResolvedOptions extends Options {}
+export interface ResolvedOptions extends Options { }
