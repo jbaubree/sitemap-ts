@@ -128,11 +128,12 @@ Converts XML into a human-readable format
 
 ### i18n
 
-- **Type:** `{ defaultLanguage?: string, languages: string[] }`
-- **Default:** `undefined`
+- **Type:** `{ defaultLanguage?: string, languages: string[], pathPrefix?: boolean }`
+- **Default:** `undefined, pathPrefix: false`
 
 Add i18n support defining alternate links.
 defaultLanguage will use this language with / and languages with /language
+pathPrefix specifies if the language code is a prefix to the path or suffix. Suffix is default. Example: http://localhost/mypage/en or http://localhost/en/mypage
 
 ### generateRobotsTxt
 

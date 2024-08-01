@@ -37,7 +37,9 @@ function getOptionByRoute<T extends Date | string | number>(options: T | RoutesO
 
 export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) {
   return routes.map((route) => {
-    const url = new URL(options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', route), removeMaybeSuffix('/', options.hostname)).href
+    const hostNamePath = removeMaybeSuffix('/', options.hostname)
+    const routePath = options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', route)
+    const url = new URL(routePath, hostNamePath).href
     const formattedSitemap = {
       url,
       changefreq: getOptionByRoute(options.changefreq, route) ?? defaultOptions.changefreq,
@@ -47,7 +49,7 @@ export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) 
     if (options.i18n) {
       const languages = options.i18n.languages.map(str => ({
         lang: str,
-        url: str === options.i18n?.defaultLanguage ? url : `${removeMaybeSuffix('/', url)}${ensurePrefix('/', str)}`,
+        url: str === options.i18n?.defaultLanguage ? url : new URL(options.i18n?.pathPrefix ? ensurePrefix('/', str) + routePath : removeMaybeSuffix('/', routePath) + ensurePrefix('/', str), hostNamePath).href,
       }))
       return Object.assign(formattedSitemap, { links: options.i18n.defaultLanguage ? [...languages, { lang: 'x-default', url }] : languages })
     }

@@ -54,12 +54,14 @@ interface Options {
    * Example: {
    *  defaultLanguage: 'fr'
    *  languages: ['fr', 'en', 'es']
+   *  pathPrefix: true
    * }
-   * @default undefined
+   * @default undefined, prefix: false
    */
   i18n?: {
     defaultLanguage?: string
     languages: string[]
+    pathPrefix?: boolean
   }
   /**
    * Other sitemaps paths
