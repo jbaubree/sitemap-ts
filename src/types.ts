@@ -1,3 +1,5 @@
+import type { NSArgs } from 'sitemap/dist/lib/sitemap-stream'
+
 export interface RobotOption {
   /**
    * User-agent value.
@@ -116,6 +118,12 @@ interface Options {
    * @default [{ userAgent: '*', allow: '/' }]
    */
   robots: RobotOption[]
+  /**
+   * Trim the xml namespace
+   * See https://www.npmjs.com/package/sitemap#options-you-can-pass
+   * @default undefined
+   */
+  xmlns?: NSArgs
 }
 
 export type UserOptions = Partial<Options>

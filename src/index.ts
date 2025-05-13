@@ -24,7 +24,9 @@ export function generateSitemap(options: UserOptions = {}) {
     return
   const formattedSitemap = getFormattedSitemap(resolvedOptions, routes)
 
-  const stream = new SitemapStream()
+  const stream = new SitemapStream({
+    xmlns: resolvedOptions.xmlns,
+  })
   formattedSitemap.forEach(item => stream.write(item))
   streamToPromise(stream).then((sitemap) => {
     const utfSitemap = sitemap.toString('utf-8')
