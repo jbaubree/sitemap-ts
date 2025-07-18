@@ -258,5 +258,108 @@ describe('sitemap', () => {
         },
       ]
     `)
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+        defaultLanguage: 'fr',
+        strategy: 'prefix_except_default',
+      },
+      lastmod: new Date('2025-07-18T12:00:00.00Z'),
+    }), ['/', '/route-a', '/en/', '/en/route-a'])).toMatchInlineSnapshot(`
+      [
+        {
+          "changefreq": "daily",
+          "lastmod": 2025-07-18T12:00:00.000Z,
+          "links": [
+            {
+              "href": "http://localhost/",
+              "hreflang": "fr",
+              "rel": "alternate",
+            },
+            {
+              "href": "http://localhost/en/",
+              "hreflang": "en",
+              "rel": "alternate",
+            },
+            {
+              "href": "http://localhost/",
+              "hreflang": "x-default",
+              "rel": "alternate",
+            },
+          ],
+          "priority": 1,
+          "url": "http://localhost/",
+        },
+        {
+          "changefreq": "daily",
+          "lastmod": 2025-07-18T12:00:00.000Z,
+          "links": [
+            {
+              "href": "http://localhost/route-a",
+              "hreflang": "fr",
+              "rel": "alternate",
+            },
+            {
+              "href": "http://localhost/en/route-a",
+              "hreflang": "en",
+              "rel": "alternate",
+            },
+            {
+              "href": "http://localhost/route-a",
+              "hreflang": "x-default",
+              "rel": "alternate",
+            },
+          ],
+          "priority": 1,
+          "url": "http://localhost/route-a",
+        },
+        {
+          "changefreq": "daily",
+          "lastmod": 2025-07-18T12:00:00.000Z,
+          "links": [
+            {
+              "href": "http://localhost/",
+              "hreflang": "fr",
+              "rel": "alternate",
+            },
+            {
+              "href": "http://localhost/en/",
+              "hreflang": "en",
+              "rel": "alternate",
+            },
+            {
+              "href": "http://localhost/",
+              "hreflang": "x-default",
+              "rel": "alternate",
+            },
+          ],
+          "priority": 1,
+          "url": "http://localhost/en/",
+        },
+        {
+          "changefreq": "daily",
+          "lastmod": 2025-07-18T12:00:00.000Z,
+          "links": [
+            {
+              "href": "http://localhost/route-a",
+              "hreflang": "fr",
+              "rel": "alternate",
+            },
+            {
+              "href": "http://localhost/en/route-a",
+              "hreflang": "en",
+              "rel": "alternate",
+            },
+            {
+              "href": "http://localhost/route-a",
+              "hreflang": "x-default",
+              "rel": "alternate",
+            },
+          ],
+          "priority": 1,
+          "url": "http://localhost/en/route-a",
+        },
+      ]
+    `)
   })
 })
