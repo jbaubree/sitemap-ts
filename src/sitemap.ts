@@ -107,7 +107,7 @@ function prefixExceptDefaultLanguageFactory(
     let pathWithoutLang: string
     if (route === useBasePath) {
       url = ensureSuffix('/', new URL(useBasePath, hostNamePath).href)
-      pathWithoutLang = useBasePath[0] === '/' ? useBasePath.slice(1) : useBasePath
+      pathWithoutLang = ''
     }
     else {
       const locale = localePrefixes.find(([
@@ -120,7 +120,7 @@ function prefixExceptDefaultLanguageFactory(
           ? route.replace(locale[0], '')
           : route.replace(locale[1], '')
         if (url === '') {
-          pathWithoutLang = useBasePath.slice(1)
+          pathWithoutLang = ''
           url = ensureSuffix('/', new URL(`${useBasePath}${locale[2]}`, hostNamePath).href)
         }
         else {

@@ -264,7 +264,7 @@ describe('sitemap', () => {
         defaultLanguage: 'fr',
         strategy: 'prefix_except_default',
       },
-      lastmod: new Date('2025-07-18T12:00:00.00Z'),
+      lastmod: new Date('2025-07-18T12:00:00.000Z'),
     }), ['/', '/route-a', '/en/', '/en/route-a'])).toMatchInlineSnapshot(`
       [
         {
