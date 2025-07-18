@@ -120,11 +120,11 @@ function prefixExceptDefaultLanguageFactory(
           ? route.replace(locale[0], '')
           : route.replace(locale[1], '')
         if (url === '') {
-          pathWithoutLang = useBasePath[0] === '/' ? useBasePath.slice(1) : useBasePath
+          pathWithoutLang = useBasePath.slice(1)
           url = ensureSuffix('/', new URL(`${useBasePath}${locale[2]}`, hostNamePath).href)
         }
         else {
-          pathWithoutLang = url.replace(useBasePath, '')
+          pathWithoutLang = url[0] === '/' ? url.slice(1) : url
           url = new URL(route, hostNamePath).href
         }
       }
@@ -138,21 +138,23 @@ function prefixExceptDefaultLanguageFactory(
     if (trailingSlash)
       xDefaultHref = ensureSuffix('/', xDefaultHref)
 
-    const links: XHTMLanguageLink[] = locales.map((l) => {
+    const links: XHTMLanguageLink[] = [{
+      hreflang: defaultLanguage,
+      rel: 'alternate',
+      href: xDefaultHref,
+    }]
+
+    for (const l of locales) {
       const href = new URL(`${useBasePath}${l}/${pathWithoutLang}`, hostNamePath).href
-      return {
+      links.push({
         hreflang: l,
         rel: 'alternate',
         href: trailingSlash ? ensureSuffix('/', href) : href,
-      }
-    }).concat({
-      hreflang: 'x-default',
-      rel: 'alternate',
-      href: xDefaultHref,
-    })
+      })
+    }
 
-    links.unshift({
-      hreflang: defaultLanguage,
+    links.push({
+      hreflang: 'x-default',
       rel: 'alternate',
       href: xDefaultHref,
     })
