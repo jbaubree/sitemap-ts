@@ -40,7 +40,7 @@ export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) 
     return routes.map(prefixExceptDefaultLanguageFactory(
       options,
       {
-        defaultLanguage: options.i18n.defaultLanguage ?? 'en',
+        defaultLanguage: options.i18n.defaultLanguage || 'en',
         languages: options.i18n.languages,
       },
     ))
