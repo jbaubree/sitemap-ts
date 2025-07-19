@@ -96,7 +96,7 @@ function prefixExceptDefaultLanguageFactory(
   const hostNamePath = removeMaybeSuffix('/', options.hostname)
   const useBasePath = ensurePrefix('/', ensureSuffix('/', options.basePath))
   const contextPath = removeMaybeSuffix('/', useBasePath)
-  const defaultLanguage = i18n.defaultLanguage ?? 'en'
+  const defaultLanguage = i18n.defaultLanguage || 'en'
   const locales = i18n.languages.filter(l => l !== defaultLanguage)
   const localePrefixes = locales.map((lang) => {
     return [`${contextPath}/${lang}/`, `${contextPath}/${lang}`, lang] as const
