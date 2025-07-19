@@ -91,7 +91,7 @@ function prefixExceptDefaultLanguageFactory(
   options: ResolvedOptions,
   i18n: PrefixExceptDefaultStrategy,
 ) {
-  // we need N links, where N is the number of languages, the x-default should always use the default language link for the target route
+  // we need N + 1 links, where N is the number of languages + x-default, the x-default should always use the default language link for the target route
   // we also need to handle special / cases like /en, /fr, etc. We need to ensure that the loc and xhtml:link always with the trailing /
   const hostNamePath = removeMaybeSuffix('/', options.hostname)
   const useBasePath = ensurePrefix('/', ensureSuffix('/', options.basePath))
