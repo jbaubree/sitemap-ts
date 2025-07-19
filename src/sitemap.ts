@@ -76,14 +76,14 @@ interface PrefixExceptDefaultStrategy {
 interface XHTMLanguageLink {
   hreflang: string
   rel: string
-  href: string
+  url: string
 }
 
 interface SiteMapRouteEntry {
   url: string
   changefreq?: string
   priority?: number
-  lastmod?: Date | string | number
+  lastmod?: Date
   links: XHTMLanguageLink[]
 }
 
@@ -141,7 +141,7 @@ function prefixExceptDefaultLanguageFactory(
     const links: XHTMLanguageLink[] = [{
       hreflang: defaultLanguage,
       rel: 'alternate',
-      href: xDefaultHref,
+      url: xDefaultHref,
     }]
 
     for (const l of locales) {
@@ -149,14 +149,14 @@ function prefixExceptDefaultLanguageFactory(
       links.push({
         hreflang: l,
         rel: 'alternate',
-        href: trailingSlash ? ensureSuffix('/', href) : href,
+        url: trailingSlash ? ensureSuffix('/', href) : href,
       })
     }
 
     links.push({
       hreflang: 'x-default',
       rel: 'alternate',
-      href: xDefaultHref,
+      url: xDefaultHref,
     })
 
     return {
