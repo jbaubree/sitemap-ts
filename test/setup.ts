@@ -1,4 +1,4 @@
-import { existsSync, rmSync, rmdirSync } from 'node:fs'
+import { existsSync, rmSync } from 'node:fs'
 import { afterEach, beforeEach } from 'vitest'
 
 import { ROBOTS_FILE, SITEMAP_FILE, SUBPATH_FOLDER, TEST_FILES } from './variables'
@@ -13,7 +13,7 @@ function removeFiles() {
       rmSync(testFile)
   })
   if (existsSync(SUBPATH_FOLDER))
-    rmdirSync(SUBPATH_FOLDER, { recursive: true })
+    rmSync(SUBPATH_FOLDER, { recursive: true, force: true })
 }
 
 beforeEach(() => {

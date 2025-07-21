@@ -63,7 +63,7 @@ interface Options {
   i18n?: {
     defaultLanguage?: string
     languages: string[]
-    strategy?: 'suffix' | 'prefix'
+    strategy?: 'suffix' | 'prefix' | 'prefix_except_default'
   }
   /**
    * Other sitemaps paths
