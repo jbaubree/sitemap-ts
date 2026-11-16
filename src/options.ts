@@ -10,7 +10,6 @@ export const defaultOptions = {
   extensions: 'html',
   changefreq: 'daily',
   priority: 1,
-  lastmod: new Date(),
   readable: false,
   generateRobotsTxt: true,
   robots: [
@@ -23,7 +22,9 @@ export const defaultOptions = {
 
 export function resolveOptions(userOptions: UserOptions): ResolvedOptions {
   return Object.assign(
-    {},
+    {
+      lastmod: new Date(),
+    },
     defaultOptions,
     userOptions,
   )

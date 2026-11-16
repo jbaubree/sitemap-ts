@@ -12,18 +12,20 @@ export function getRoutes(options: ResolvedOptions) {
     : options.extensions
   const strExt = ext.map(e => `**/*.${e}`)
 
-  return [
+  const routes = [
     ...fg.sync(strExt, { cwd: options.outDir }).map((route) => {
       let r = route
       ext.forEach((e) => {
-        const regex = new RegExp(`index\.${e}`, 'g')
-        r = r.replace(regex, '')
+        const suffix = `index.${e}`
+        if (r.endsWith(suffix))
+          r = r.slice(0, -suffix.length)
       })
       const parsedRoute = parse(r)
       return slash(join('/', parsedRoute.dir, parsedRoute.name))
     }),
     ...options.dynamicRoutes.map(route => slash(join('/', join(parse(route).dir, parse(route).name)))),
   ].filter(route => !options.exclude.includes(route))
+  return Array.from(new Set(routes))
 }
 
 function getOptionByRoute<T extends Date | string | number>(options: T | RoutesOptionMap<T>, route: string): T | undefined {
@@ -57,7 +59,7 @@ export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) 
       url,
       changefreq: getOptionByRoute(options.changefreq, route) ?? defaultOptions.changefreq,
       priority: getOptionByRoute(options.priority, route) ?? defaultOptions.priority,
-      lastmod: getOptionByRoute(options.lastmod, route) ?? defaultOptions.lastmod,
+      lastmod: getOptionByRoute(options.lastmod, route) ?? new Date(),
     }
     if (options.i18n) {
       const strategy = options.i18n.strategy ?? 'suffix'
@@ -184,7 +186,7 @@ function prefixExceptDefaultLanguageFactory(
       url,
       changefreq: getOptionByRoute(options.changefreq, route) ?? defaultOptions.changefreq,
       priority: getOptionByRoute(options.priority, route) ?? defaultOptions.priority,
-      lastmod: getOptionByRoute(options.lastmod, route) ?? defaultOptions.lastmod,
+      lastmod: getOptionByRoute(options.lastmod, route) ?? new Date(),
       links,
     } satisfies SiteMapRouteEntry
   }

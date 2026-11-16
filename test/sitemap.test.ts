@@ -54,7 +54,6 @@ describe('sitemap', () => {
       '/test',
       '/sub-path/deeper-path',
       '/sub-path',
-      '/',
       '/route',
       '/route/sub-route',
     ])

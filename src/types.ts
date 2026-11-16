@@ -1,4 +1,10 @@
-import type { NSArgs } from 'sitemap/dist/lib/sitemap-stream'
+export interface NSArgs {
+  news: boolean
+  video: boolean
+  xhtml: boolean
+  image: boolean
+  custom?: string[]
+}
 
 export interface RobotOption {
   /**

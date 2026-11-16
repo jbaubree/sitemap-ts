@@ -8,7 +8,7 @@ import { getContent, getRules } from './robots'
 import { getFormattedSitemap, getRoutes } from './sitemap'
 import { getResolvedPath } from './utils'
 
-export function generateSitemap(options: UserOptions = {}) {
+export async function generateSitemap(options: UserOptions = {}) {
   const resolvedOptions: ResolvedOptions = resolveOptions(options)
 
   // robots.txt
@@ -28,14 +28,13 @@ export function generateSitemap(options: UserOptions = {}) {
     xmlns: resolvedOptions.xmlns,
   })
   formattedSitemap.forEach(item => stream.write(item))
-  streamToPromise(stream).then((sitemap) => {
-    const utfSitemap = sitemap.toString('utf-8')
-    const formattedSitemap = resolvedOptions.readable
-      ? format(utfSitemap)
-      : utfSitemap
-    writeFileSync(getResolvedPath('sitemap.xml', resolvedOptions), formattedSitemap)
-  })
   stream.end()
+  const sitemap = await streamToPromise(stream)
+  const utfSitemap = sitemap.toString('utf-8')
+  const output = resolvedOptions.readable
+    ? format(utfSitemap)
+    : utfSitemap
+  writeFileSync(getResolvedPath('sitemap.xml', resolvedOptions), output)
 }
 
 export { resolveOptions } from './options'
