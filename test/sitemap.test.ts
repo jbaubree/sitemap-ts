@@ -7,8 +7,12 @@ import { generateTestFiles } from './utils'
 describe('sitemap', () => {
   it('get routes', async () => {
     expect(getRoutes(resolveOptions({}))).toEqual([])
-    expect(getRoutes(resolveOptions({ extensions: ['html', 'md'] }))).toEqual([])
-    expect(getRoutes(resolveOptions({ dynamicRoutes: ['/', 'route', '/route/sub-route'] }))).toEqual([
+    expect(getRoutes(resolveOptions({
+      extensions: ['html', 'md'],
+    }))).toEqual([])
+    expect(getRoutes(resolveOptions({
+      dynamicRoutes: ['/', 'route', '/route/sub-route'],
+    }))).toEqual([
       '/',
       '/route',
       '/route/sub-route',
@@ -31,7 +35,9 @@ describe('sitemap', () => {
       '/sub-path',
     ])
 
-    expect(getRoutes(resolveOptions({ extensions: ['html', 'md'] }))).toEqual([
+    expect(getRoutes(resolveOptions({
+      extensions: ['html', 'md'],
+    }))).toEqual([
       '/',
       '/md',
       '/test',
@@ -41,7 +47,9 @@ describe('sitemap', () => {
       '/sub-path/md/md-deeper-path',
     ])
 
-    expect(getRoutes(resolveOptions({ dynamicRoutes: ['/', 'route', '/route/sub-route'] }))).toEqual([
+    expect(getRoutes(resolveOptions({
+      dynamicRoutes: ['/', 'route', '/route/sub-route'],
+    }))).toEqual([
       '/',
       '/test',
       '/sub-path/deeper-path',
@@ -54,9 +62,11 @@ describe('sitemap', () => {
 
   it('get formatted sitemap', async () => {
     expect(getFormattedSitemap(resolveOptions({}), [])).toEqual([])
-    expect(getFormattedSitemap(resolveOptions({}), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({}), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "daily",
@@ -66,9 +76,11 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ basePath: '/base' }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({ basePath: '/base' }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "daily",
@@ -78,9 +90,11 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ changefreq: 'monthly', priority: 0.7 }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({ changefreq: 'monthly', priority: 0.7 }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "monthly",
@@ -90,9 +104,14 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ changefreq: { '*': 'weekly', '/otherRoute': 'monthly' }, priority: { '*': 0.8, '/otherRoute': 0.4 } }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({
+      changefreq: { '*': 'weekly', '/otherRoute': 'monthly' },
+      priority: { '*': 0.8, '/otherRoute': 0.4 },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "weekly",
@@ -102,9 +121,14 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ changefreq: { '*': 'weekly', '/route': 'monthly', '/otherRoute': 'never' }, priority: { '*': 0.8, '/route': 0.6, '/otherRoute': 0.5 } }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({
+      changefreq: { '*': 'weekly', '/route': 'monthly', '/otherRoute': 'never' },
+      priority: { '*': 0.8, '/route': 0.6, '/otherRoute': 0.5 },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "monthly",
@@ -114,9 +138,15 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ i18n: { languages: ['fr', 'en'] } }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+      },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "daily",
@@ -136,9 +166,16 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ i18n: { languages: ['fr', 'en'], strategy: 'suffix' } }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+        strategy: 'suffix',
+      },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "daily",
@@ -158,9 +195,16 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ i18n: { languages: ['fr', 'en'], strategy: 'prefix' } }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+        strategy: 'prefix',
+      },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "daily",
@@ -180,9 +224,16 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ i18n: { languages: ['fr', 'en'], defaultLanguage: 'fr' } }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+        defaultLanguage: 'fr',
+      },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "daily",
@@ -206,9 +257,17 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ i18n: { languages: ['fr', 'en'], defaultLanguage: 'fr', strategy: 'suffix' } }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+        defaultLanguage: 'fr',
+        strategy: 'suffix',
+      },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "daily",
@@ -232,9 +291,17 @@ describe('sitemap', () => {
         },
       ]
     `)
-    expect(getFormattedSitemap(resolveOptions({ i18n: { languages: ['fr', 'en'], defaultLanguage: 'fr', strategy: 'prefix' } }), ['/route'])).toMatchInlineSnapshot([{
-      lastmod: expect.any(Date),
-    }], `
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+        defaultLanguage: 'fr',
+        strategy: 'prefix',
+      },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
       [
         {
           "changefreq": "daily",

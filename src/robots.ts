@@ -1,6 +1,6 @@
-import { ensurePrefix } from '@antfu/utils'
-
 import type { RobotOption } from './types'
+
+import { ensurePrefix } from '@antfu/utils'
 import { removeMaybeSuffix } from './utils'
 
 enum RobotCorrespondences {
@@ -26,7 +26,9 @@ export function getRules(options: RobotOption[]) {
     // @ts-expect-error keyof RobotOption are strings
     const keys: Array<keyof RobotOption> = Object.keys(RobotCorrespondences).filter((key: keyof RobotOption) => typeof (rule[key]) !== 'undefined')
     keys.forEach((key) => {
-      const values = Array.isArray(rule[key]) ? rule[key] as Value[] : [rule[key]] as Value[]
+      const values = Array.isArray(rule[key])
+        ? rule[key] as Value[]
+        : [rule[key]] as Value[]
       values.forEach((value) => {
         rules.push({
           key: RobotCorrespondences[key],
@@ -40,11 +42,11 @@ export function getRules(options: RobotOption[]) {
 }
 
 export function getContent(rules: RobotRuleInterface[], hostname: string, externalSitemaps: string[]) {
-  return rules.map(rule => `${rule.key}: ${String(rule.value).trim()}`).join('\n')
-    .concat(`\n\nSitemap: ${getFinalSitemapPath(hostname)}`)
-    .concat(externalSitemaps.map(s => `\nSitemap: ${
-        s.startsWith('http') ? s : getFinalSitemapPath(hostname, s)
-      }`).join(''))
+  return rules.map(rule => `${rule.key}: ${String(rule.value).trim()}`).join('\n').concat(`\n\nSitemap: ${getFinalSitemapPath(hostname)}`).concat(externalSitemaps.map(s => `\nSitemap: ${
+    s.startsWith('http')
+      ? s
+      : getFinalSitemapPath(hostname, s)
+  }`).join(''))
 }
 
 export function getFinalSitemapPath(hostname: string, file = '/sitemap.xml') {

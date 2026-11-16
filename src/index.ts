@@ -1,12 +1,12 @@
+import type { ResolvedOptions, UserOptions } from './types'
 import { writeFileSync } from 'node:fs'
 import { SitemapStream, streamToPromise } from 'sitemap'
-import format from 'xml-formatter'
 
+import format from 'xml-formatter'
 import { resolveOptions } from './options'
 import { getContent, getRules } from './robots'
 import { getFormattedSitemap, getRoutes } from './sitemap'
 import { getResolvedPath } from './utils'
-import type { ResolvedOptions, UserOptions } from './types'
 
 export function generateSitemap(options: UserOptions = {}) {
   const resolvedOptions: ResolvedOptions = resolveOptions(options)
@@ -30,13 +30,15 @@ export function generateSitemap(options: UserOptions = {}) {
   formattedSitemap.forEach(item => stream.write(item))
   streamToPromise(stream).then((sitemap) => {
     const utfSitemap = sitemap.toString('utf-8')
-    const formattedSitemap = resolvedOptions.readable ? format(utfSitemap) : utfSitemap
+    const formattedSitemap = resolvedOptions.readable
+      ? format(utfSitemap)
+      : utfSitemap
     writeFileSync(getResolvedPath('sitemap.xml', resolvedOptions), formattedSitemap)
   })
   stream.end()
 }
 
-export { getRoutes, getFormattedSitemap } from './sitemap'
 export { resolveOptions } from './options'
+export { getFormattedSitemap, getRoutes } from './sitemap'
 export * from './types'
 export default generateSitemap

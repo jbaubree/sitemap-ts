@@ -1,13 +1,15 @@
+import type { ResolvedOptions, RoutesOptionMap } from './types'
 import { join, parse } from 'node:path'
 import { ensurePrefix, ensureSuffix, slash } from '@antfu/utils'
-import fg from 'fast-glob'
 
-import type { ResolvedOptions, RoutesOptionMap } from './types'
-import { removeMaybeSuffix } from './utils'
+import fg from 'fast-glob'
 import { defaultOptions } from './options'
+import { removeMaybeSuffix } from './utils'
 
 export function getRoutes(options: ResolvedOptions) {
-  const ext = typeof options.extensions === 'string' ? [options.extensions] : options.extensions
+  const ext = typeof options.extensions === 'string'
+    ? [options.extensions]
+    : options.extensions
   const strExt = ext.map(e => `**/*.${e}`)
 
   return [
@@ -47,7 +49,9 @@ export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) 
   }
   return routes.map((route) => {
     const hostNamePath = removeMaybeSuffix('/', options.hostname)
-    const routePath = options.basePath ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route) : ensurePrefix('/', route)
+    const routePath = options.basePath
+      ? ensurePrefix('/', options.basePath) + ensurePrefix('/', route)
+      : ensurePrefix('/', route)
     const url = new URL(routePath, hostNamePath).href
     const formattedSitemap = {
       url,
@@ -59,9 +63,20 @@ export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) 
       const strategy = options.i18n.strategy ?? 'suffix'
       const languages = options.i18n.languages.map(str => ({
         lang: str,
-        url: str === options.i18n?.defaultLanguage ? url : new URL(strategy === 'prefix' ? ensurePrefix('/', str) + routePath : removeMaybeSuffix('/', routePath) + ensurePrefix('/', str), hostNamePath).href,
+        url: str === options.i18n?.defaultLanguage
+          ? url
+          : new URL(strategy === 'prefix'
+            ? ensurePrefix('/', str) + routePath
+            : removeMaybeSuffix('/', routePath) + ensurePrefix('/', str), hostNamePath).href,
       }))
-      return Object.assign(formattedSitemap, { links: options.i18n.defaultLanguage ? [...languages, { lang: 'x-default', url }] : languages })
+      return Object.assign(formattedSitemap, {
+        links: options.i18n.defaultLanguage
+          ? [
+              ...languages,
+              { lang: 'x-default', url },
+            ]
+          : languages,
+      })
     }
 
     return formattedSitemap
@@ -124,7 +139,9 @@ function prefixExceptDefaultLanguageFactory(
           url = ensureSuffix('/', new URL(`${useBasePath}${locale[2]}`, hostNamePath).href)
         }
         else {
-          pathWithoutLang = url[0] === '/' ? url.slice(1) : url
+          pathWithoutLang = url[0] === '/'
+            ? url.slice(1)
+            : url
           url = new URL(route, hostNamePath).href
         }
       }
@@ -138,18 +155,22 @@ function prefixExceptDefaultLanguageFactory(
     if (trailingSlash)
       xDefaultHref = ensureSuffix('/', xDefaultHref)
 
-    const links: XHTMLanguageLink[] = [{
-      hreflang: defaultLanguage,
-      rel: 'alternate',
-      url: xDefaultHref,
-    }]
+    const links: XHTMLanguageLink[] = [
+      {
+        hreflang: defaultLanguage,
+        rel: 'alternate',
+        url: xDefaultHref,
+      },
+    ]
 
     for (const l of locales) {
       const href = new URL(`${useBasePath}${l}/${pathWithoutLang}`, hostNamePath).href
       links.push({
         hreflang: l,
         rel: 'alternate',
-        url: trailingSlash ? ensureSuffix('/', href) : href,
+        url: trailingSlash
+          ? ensureSuffix('/', href)
+          : href,
       })
     }
 

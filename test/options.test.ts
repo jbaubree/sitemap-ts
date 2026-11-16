@@ -95,17 +95,20 @@ describe('options', () => {
 
   it('resolve options with policies', () => {
     expect(resolveOptions({
-      robots: [{
-        userAgent: '*',
-        allow: '/',
-        disallow: '/some-path',
-        crawlDelay: 10,
-      }, {
-        userAgent: 'GoogleBot',
-        allow: ['/', '/some-path'],
-        disallow: ['/disabled-path', '/another-disabled-path'],
-        crawlDelay: 10,
-      }],
+      robots: [
+        {
+          userAgent: '*',
+          allow: '/',
+          disallow: '/some-path',
+          crawlDelay: 10,
+        },
+        {
+          userAgent: 'GoogleBot',
+          allow: ['/', '/some-path'],
+          disallow: ['/disabled-path', '/another-disabled-path'],
+          crawlDelay: 10,
+        },
+      ],
     })).toMatchInlineSnapshot({
       lastmod: expect.any(Date),
     }, `

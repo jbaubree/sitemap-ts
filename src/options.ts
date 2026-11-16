@@ -13,10 +13,12 @@ export const defaultOptions = {
   lastmod: new Date(),
   readable: false,
   generateRobotsTxt: true,
-  robots: [{
-    userAgent: '*',
-    allow: '/',
-  }],
+  robots: [
+    {
+      userAgent: '*',
+      allow: '/',
+    },
+  ],
 }
 
 export function resolveOptions(userOptions: UserOptions): ResolvedOptions {

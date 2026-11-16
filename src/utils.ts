@@ -1,7 +1,7 @@
-import { isAbsolute, resolve } from 'node:path'
-import { ensurePrefix } from '@antfu/utils'
-
 import type { ResolvedOptions } from './types'
+import { isAbsolute, resolve } from 'node:path'
+
+import { ensurePrefix } from '@antfu/utils'
 
 export function getResolvedPath(file: string, resolvedOptions: ResolvedOptions) {
   if (isAbsolute(resolvedOptions.outDir))

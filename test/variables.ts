@@ -10,10 +10,12 @@ export const TEST_FILES = [
   'dist/sub-path/md/md-deeper-path.md',
 ]
 export const SUBPATH_FOLDER = 'dist/sub-path/'
-export const TEST_OPTION_1 = [{
-  userAgent: '*',
-  allow: '/',
-}]
+export const TEST_OPTION_1 = [
+  {
+    userAgent: '*',
+    allow: '/',
+  },
+]
 export const TEST_OPTION_2 = [
   {
     userAgent: '*',
@@ -27,13 +29,16 @@ export const TEST_OPTION_2 = [
   },
 ]
 
-export const TEST_RULES_1 = [{
-  key: 'User-agent',
-  value: '*',
-}, {
-  key: 'Allow',
-  value: '/',
-}]
+export const TEST_RULES_1 = [
+  {
+    key: 'User-agent',
+    value: '*',
+  },
+  {
+    key: 'Allow',
+    value: '/',
+  },
+]
 export const TEST_RULES_2 = [
   {
     key: 'User-agent',
