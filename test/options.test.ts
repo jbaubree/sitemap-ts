@@ -25,6 +25,7 @@ describe('options', () => {
             "userAgent": "*",
           },
         ],
+        "splitAt": 45000,
       }
     `)
   })
@@ -57,6 +58,7 @@ describe('options', () => {
             "userAgent": "*",
           },
         ],
+        "splitAt": 45000,
       }
     `)
   })
@@ -89,6 +91,7 @@ describe('options', () => {
             "userAgent": "*",
           },
         ],
+        "splitAt": 45000,
       }
     `)
   })
@@ -145,6 +148,7 @@ describe('options', () => {
             "userAgent": "GoogleBot",
           },
         ],
+        "splitAt": 45000,
       }
     `)
   })
@@ -205,6 +209,7 @@ describe('options', () => {
             "userAgent": "*",
           },
         ],
+        "splitAt": 45000,
       }
     `)
   })

@@ -19,6 +19,7 @@ export const defaultOptions = {
   extensions: 'html',
   changefreq: 'daily',
   priority: 1,
+  splitAt: 45000,
   readable: false,
   generateRobotsTxt: true,
   robots: [

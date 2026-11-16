@@ -130,6 +130,15 @@ interface Options {
    * @default undefined
    */
   xmlns?: NSArgs
+  /**
+   * Split threshold. When the number of URLs exceeds this value,
+   * `sitemap.xml` becomes a sitemap index pointing to `sitemap-1.xml`,
+   * `sitemap-2.xml`, etc. Below the threshold a single `sitemap.xml`
+   * is produced (previous behavior). The sitemap protocol requires
+   * at most 50 000 URLs per file.
+   * @default 45000
+   */
+  splitAt: number
 }
 
 export type UserOptions = Partial<Options>
