@@ -23,6 +23,9 @@
     "Robots.txt"
   ],
   "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
