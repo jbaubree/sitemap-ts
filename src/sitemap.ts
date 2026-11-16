@@ -63,19 +63,27 @@ export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) 
     }
     if (options.i18n) {
       const strategy = options.i18n.strategy ?? 'suffix'
+      const buildLocalizedUrl = (lang: string) => new URL(strategy === 'prefix'
+        ? ensurePrefix('/', lang) + routePath
+        : removeMaybeSuffix('/', routePath) + ensurePrefix('/', lang), hostNamePath).href
+      const includeDefault = options.i18n.includeDefaultLanguageInURL
+        && !!options.i18n.defaultLanguage
+      const defaultLanguageUrl = includeDefault
+        ? buildLocalizedUrl(options.i18n.defaultLanguage!)
+        : url
       const languages = options.i18n.languages.map(str => ({
         lang: str,
         url: str === options.i18n?.defaultLanguage
-          ? url
-          : new URL(strategy === 'prefix'
-            ? ensurePrefix('/', str) + routePath
-            : removeMaybeSuffix('/', routePath) + ensurePrefix('/', str), hostNamePath).href,
+          ? defaultLanguageUrl
+          : buildLocalizedUrl(str),
       }))
+      if (includeDefault)
+        formattedSitemap.url = defaultLanguageUrl
       return Object.assign(formattedSitemap, {
         links: options.i18n.defaultLanguage
           ? [
               ...languages,
-              { lang: 'x-default', url },
+              { lang: 'x-default', url: defaultLanguageUrl },
             ]
           : languages,
       })

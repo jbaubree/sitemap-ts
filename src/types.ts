@@ -70,6 +70,16 @@ interface Options {
     defaultLanguage?: string
     languages: string[]
     strategy?: 'suffix' | 'prefix' | 'prefix_except_default'
+    /**
+     * When true, the `<loc>` URL and the default-language alternate
+     * (and `x-default`) are built with the strategy applied to the
+     * default language too, producing URLs like `/<defaultLang>/route`
+     * (prefix) or `/route/<defaultLang>` (suffix).
+     * Only applies when `strategy` is 'prefix' or 'suffix' and
+     * `defaultLanguage` is set.
+     * @default false
+     */
+    includeDefaultLanguageInURL?: boolean
   }
   /**
    * Other sitemaps paths

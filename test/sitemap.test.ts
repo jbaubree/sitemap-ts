@@ -328,6 +328,76 @@ describe('sitemap', () => {
       i18n: {
         languages: ['fr', 'en'],
         defaultLanguage: 'fr',
+        strategy: 'prefix',
+        includeDefaultLanguageInURL: true,
+      },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
+      [
+        {
+          "changefreq": "daily",
+          "lastmod": Any<Date>,
+          "links": [
+            {
+              "lang": "fr",
+              "url": "http://localhost/fr/route",
+            },
+            {
+              "lang": "en",
+              "url": "http://localhost/en/route",
+            },
+            {
+              "lang": "x-default",
+              "url": "http://localhost/fr/route",
+            },
+          ],
+          "priority": 1,
+          "url": "http://localhost/fr/route",
+        },
+      ]
+    `)
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+        defaultLanguage: 'fr',
+        strategy: 'suffix',
+        includeDefaultLanguageInURL: true,
+      },
+    }), ['/route'])).toMatchInlineSnapshot([
+      {
+        lastmod: expect.any(Date),
+      },
+    ], `
+      [
+        {
+          "changefreq": "daily",
+          "lastmod": Any<Date>,
+          "links": [
+            {
+              "lang": "fr",
+              "url": "http://localhost/route/fr",
+            },
+            {
+              "lang": "en",
+              "url": "http://localhost/route/en",
+            },
+            {
+              "lang": "x-default",
+              "url": "http://localhost/route/fr",
+            },
+          ],
+          "priority": 1,
+          "url": "http://localhost/route/fr",
+        },
+      ]
+    `)
+    expect(getFormattedSitemap(resolveOptions({
+      i18n: {
+        languages: ['fr', 'en'],
+        defaultLanguage: 'fr',
         strategy: 'prefix_except_default',
       },
       lastmod: new Date('2025-07-18T12:00:00.000Z'),
