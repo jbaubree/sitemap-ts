@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import { resolveOptions } from '../src/options'
 
 describe('options', () => {
@@ -147,6 +147,37 @@ describe('options', () => {
         ],
       }
     `)
+  })
+
+  describe('source_date_epoch support', () => {
+    const originalValue = process.env.SOURCE_DATE_EPOCH
+
+    afterEach(() => {
+      if (originalValue === undefined)
+        delete process.env.SOURCE_DATE_EPOCH
+      else
+        process.env.SOURCE_DATE_EPOCH = originalValue
+    })
+
+    it('uses SOURCE_DATE_EPOCH when set to a valid integer', () => {
+      process.env.SOURCE_DATE_EPOCH = '1700000000'
+      expect(resolveOptions({}).lastmod).toEqual(new Date(1700000000 * 1000))
+    })
+
+    it('ignores SOURCE_DATE_EPOCH when not an integer', () => {
+      process.env.SOURCE_DATE_EPOCH = 'not-a-number'
+      const before = Date.now()
+      const resolved = resolveOptions({})
+      const after = Date.now()
+      expect((resolved.lastmod as Date).getTime()).toBeGreaterThanOrEqual(before)
+      expect((resolved.lastmod as Date).getTime()).toBeLessThanOrEqual(after)
+    })
+
+    it('user-provided lastmod takes precedence over SOURCE_DATE_EPOCH', () => {
+      process.env.SOURCE_DATE_EPOCH = '1700000000'
+      const userDate = new Date('2024-01-01T00:00:00.000Z')
+      expect(resolveOptions({ lastmod: userDate }).lastmod).toBe(userDate)
+    })
   })
 
   it('resolve options with disabled robots.txt file', () => {

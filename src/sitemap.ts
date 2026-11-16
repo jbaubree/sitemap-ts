@@ -3,7 +3,7 @@ import { join, parse } from 'node:path'
 import { ensurePrefix, ensureSuffix, slash } from '@antfu/utils'
 
 import fg from 'fast-glob'
-import { defaultOptions } from './options'
+import { defaultLastmod, defaultOptions } from './options'
 import { removeMaybeSuffix } from './utils'
 
 export function getRoutes(options: ResolvedOptions) {
@@ -59,7 +59,7 @@ export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) 
       url,
       changefreq: getOptionByRoute(options.changefreq, route) ?? defaultOptions.changefreq,
       priority: getOptionByRoute(options.priority, route) ?? defaultOptions.priority,
-      lastmod: getOptionByRoute(options.lastmod, route) ?? new Date(),
+      lastmod: getOptionByRoute(options.lastmod, route) ?? defaultLastmod(),
     }
     if (options.i18n) {
       const strategy = options.i18n.strategy ?? 'suffix'
@@ -186,7 +186,7 @@ function prefixExceptDefaultLanguageFactory(
       url,
       changefreq: getOptionByRoute(options.changefreq, route) ?? defaultOptions.changefreq,
       priority: getOptionByRoute(options.priority, route) ?? defaultOptions.priority,
-      lastmod: getOptionByRoute(options.lastmod, route) ?? new Date(),
+      lastmod: getOptionByRoute(options.lastmod, route) ?? defaultLastmod(),
       links,
     } satisfies SiteMapRouteEntry
   }
