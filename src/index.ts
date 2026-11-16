@@ -73,5 +73,7 @@ export async function generateSitemap(options: UserOptions = {}) {
 
 export { resolveOptions } from './options'
 export { getFormattedSitemap, getRoutes } from './sitemap'
+export { getRoutesFromTypedRouter } from './typed-router'
+export type { GetRoutesFromTypedRouterOptions } from './typed-router'
 export * from './types'
 export default generateSitemap
