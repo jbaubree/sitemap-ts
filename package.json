@@ -61,6 +61,7 @@
     "@antfu/ni": "^30.6.0",
     "@babel/types": "^8.1.2",
     "@types/node": "^26.6.6",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "@vitest/coverage-v8": "^5.1.0",
     "bumpp": "^12.3.0",
     "eslint": "^10.15.0",
@@ -71,7 +72,7 @@
     "rimraf": "^6.1.4",
     "simple-git-hooks": "^2.14.0",
     "taze": "^21.3.0",
-    "typescript": "^5.9.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "unbuild": "^3.6.1",
     "vite": "^8.3.8",
     "vitest": "^5.1.0"
