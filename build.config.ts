@@ -8,6 +8,9 @@ export default defineBuildConfig({
   clean: true,
   rollup: {
     emitCJS: true,
+    output: {
+      exports: 'named',
+    },
   },
   failOnWarn: false,
 })
