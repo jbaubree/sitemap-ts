@@ -1,10 +1,16 @@
+minimumReleaseAgeExcludePrune: true
+trustPolicy: no-downgrade
+shellEmulator: true
+
 allowBuilds:
   esbuild: true
   pnpm: true
   simple-git-hooks: true
+
 permissions:
   taze:
     skills: true
+
 skills:
   dirs:
     - .agent/skills
