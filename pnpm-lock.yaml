@@ -186,7 +186,7 @@ importers:
         version: 10.0.0
       xml-formatter:
         specifier: ^3.7.0
-        version: 3.7.0
+        version: 3.7.1
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^10.0.0
@@ -3521,9 +3521,9 @@ packages:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
-  xml-formatter@3.7.0:
-    resolution: {integrity: sha512-+8qTc3zv2UcJ1v9IsSIce37Dl4MQG14Cp7tWrwmy202UaI1wqRukw5QMX1JHsV+DX64yw77EgGsj2s5wGvuMbQ==}
-    engines: {node: '>= 16'}
+  xml-formatter@3.7.1:
+    resolution: {integrity: sha512-km3zE1tfiz7NE+5+h9jK2VvYsumFa6yBlTUZwnJ62IIK/wmZv2nUgu61yFsodOrRCTpjacLb7DqEabGnWlVfng==}
+    engines: {node: '>= 20'}
 
   xml-name-validator@5.0.0:
     resolution: {integrity: sha512-EvGK8EJ3DhaHfbRlETOWAS5pO9MZITeauHKJyb8wyajUfQUenkIg2MvLDTZ4T/TgIcm3HU0TFBgWWboAZ30UHg==}
@@ -6725,7 +6725,7 @@ snapshots:
 
   word-wrap@1.2.5: {}
 
-  xml-formatter@3.7.0:
+  xml-formatter@3.7.1:
     dependencies:
       xml-parser-xo: 4.1.6
 
