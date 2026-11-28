@@ -220,7 +220,7 @@ importers:
         version: 4.8.0
       lint-staged:
         specifier: ^17.6.1
-        version: 17.6.1
+        version: 17.6.3
       pnpm:
         specifier: ^12.21.0
         version: 12.21.0
@@ -2564,8 +2564,8 @@ packages:
     resolution: {integrity: sha512-aRAOI9Ia43ygL4o1EOmC/sc/0OFxrm7qcQngiIyWaqVnSnz932ybJ07zyCcgMNGSDP8Yxaf88Xj1zHEXmvQ4SA==}
     engines: {node: '>=14'}
 
-  lint-staged@17.6.1:
-    resolution: {integrity: sha512-3MXgVN7BERDR/6CXZs2fDHGc+r0+hlvGAa9wqMlVbIS6RVRuaPOnb5SnN6wMXulwfEy9DXVkMVUN/8cUlpPDnw==}
+  lint-staged@17.6.3:
+    resolution: {integrity: sha512-MuBskhLFmGK37UlEVMRS5GrMEE3lDZsnCuI9jF0zlxJ+sTSeNiTKaPcx3ewVmAHYXQmrQZapeVuC1RMpDARWsQ==}
     engines: {node: '>=22.22.1'}
     hasBin: true
 
@@ -3299,6 +3299,10 @@ packages:
 
   tinyexec@1.3.1:
     resolution: {integrity: sha512-GCvB3aoys96IuDFBMcTB46JOR6mdMtAToqwiW8JlWhsoh1mhHi/xn9ss/Dg7N555GiJyEt2qzoG/NHCwM6h1EA==}
+    engines: {node: '>=18'}
+
+  tinyexec@1.4.0:
+    resolution: {integrity: sha512-PV6lIcJQh57aFeJDwx16JNHmgFRh5xguzallrDW1qe8nAghYgr5MKz2K5k7wEyV/ygZhdnIAP8+HZSarHPBCsg==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.17:
@@ -5527,11 +5531,11 @@ snapshots:
 
   lilconfig@3.1.5: {}
 
-  lint-staged@17.6.1:
+  lint-staged@17.6.3:
     dependencies:
       picomatch: 4.0.7
       string-argv: 0.4.0
-      tinyexec: 1.3.1
+      tinyexec: 1.4.0
     optionalDependencies:
       yaml: 2.9.1
 
@@ -6501,6 +6505,8 @@ snapshots:
   tinybench@6.2.3: {}
 
   tinyexec@1.3.1: {}
+
+  tinyexec@1.4.0: {}
 
   tinyglobby@0.2.17:
     dependencies:
